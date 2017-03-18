@@ -1,95 +1,90 @@
 # Team-Porto.Flip-TA-2017
 
-Team Porto Flip TelerikAcademy Season 8 Yean 2017
+## Team Porto Flip TelerikAcademy Season 8 Yean 2017
+#
+#   JavaScript DOM & UI: Teamwork Assignment
 
-# JavaScript-UI-and-DOM
+This document describes the teamwork assignment for Telerik Academy students in JavaScript UI & DOM course
 
-Repository for the course [JavaScript UI and DOM](https://telerikacademy.com/Courses/Courses/Details/344) at [Telerik Academy](https://telerikacademy.com)
+##   Project Description
 
-The **JavaScript UI and DOM** is about building of low-level user interface. The course covers topics like DOM, jQuery, events, graphics & animations with HTML5 Canvas and templates
+Implement a client-side JavaScript application using the HTML graphic APIs – **canvas** and **SVG**.
 
-##	Course Program
+The project can be a **game**, **web statistics** or **anything else**.
+-   Sample applications are:
+    -   Chess
+    -   Backgammon
+    -   Any jumping game:
+        -   Super Mario, Bomberman or else
+    -   Statistics application
+        -   App showing different charts, based on received data
+    -   Minesweeper
+    -   Solitaire
+    -   Bridge-Belote
+    -   Paint-like application – drawing shapes, lines, etc
 
-### [00. Course Introduction](/Topics/00. Course-intro)
+##  General Requirements
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/00. Course-intro/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/00. Course-intro/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/00. Course-intro/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/00. Course-intro/VIDEOS.md)
+Please define and implement the following assets in your project:
 
-### [01. Document Object Model](/Topics/01. Document Object Model)
+-   Use the **HTML5 canvas**
+    -   Or a canvas framework like `KineticJS`, `paper.js` or other
+-   Use SVG
+    -   Or a SVG framework like `Raphael JS` or other
+-   Create animations
+    -   Either for the canvas, SVG or both
+-   The application must work in the latest versions of the browsers: 
+    -   Google Chrome
+    -   Mozilla Firefox
+    -   Microsoft Edge/Internet Explorer 11
+    -   Opera
+    -   Apple Safari
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/01. Document Object Model/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/01. Document Object Model/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/01. Document Object Model/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/01. Document Object Model/VIDEOS.md)
+##  Additional Requirements
 
-### [02. HTML5 Canvas](/Topics/02. HTML5 Canvas)
+Follow the best practices for producing high-quality code: 
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/02. HTML5 Canvas/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/02. HTML5 Canvas/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/02. HTML5 Canvas/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/02. HTML5 Canvas/VIDEOS.md)
+-   **Correct naming**
+-   **Data encapsulation**
+    -   Use modules
+-   Use ES 2015 syntax where possible
+-   **Strong cohesion** and **loose coupling**
+-   Use **GIT** as a source control system
+    -   Host it on <a href="https://github.com" title="https://github.com" target="_blank">https://github.com</a>
 
-### [03. Scalable Vector Graphics](/Topics/03. Scalable Vector Graphics)
+##  Optional Requirements
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/03. Scalable Vector Graphics/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/03. Scalable Vector Graphics/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/03. Scalable Vector Graphics/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/03. Scalable Vector Graphics/VIDEOS.md)
+If you have a chance, time and a suitable situation, you might add some of the following to your project:
 
-### [04. Frameworks for Graphics](/Topics/04. Frameworks for Graphics)
+-   Use DOM manipulations like native DOM API and/or jQuery
+-   Unit and integration testing
+-   Backward compatibility (make the application usable on browsers like IE8, IE7 and IE6)
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/04. Frameworks for Graphics/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/04. Frameworks for Graphics/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/04. Frameworks for Graphics/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/04. Frameworks for Graphics/VIDEOS.md)
+##  Non-required Work
+-   Completely finished project is not obligatory required. It will not be a big problem if your project is not completely finished or is not working greatly
+    -   This team work project is for educational purpose
+    -   Its main purpose it to experience using graphics, DOM manipulation and OOP in a real-world-like project and to get some experience in team working and team collaboration with a source control system.
+-   Implementation of server-side logic with ASP.NET, PHP, Java or Node.js
 
-### [05. Animations with HTML5 Canvas](/Topics/05. Animations with HTML5 Canvas)
+##  Deliverables
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/05. Animations with HTML5 Canvas/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/05. Animations with HTML5 Canvas/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/05. Animations with HTML5 Canvas/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/05. Animations with HTML5 Canvas/VIDEOS.md)
+-   Upload a brief video (2-3 mins) of your application and upload it in [YouTube](https://youtube.com)
+    -   **Each project without an uploaded video in YouTube will be considered not done**
+-   Upload your project in http://best.telerikacademy.com
+    -   A brief description of your application
+    -   Link the video in the description
+    -   Mandatory refer the github repository of your application
+    -   Link with live preview of your application
+        -   You can use https://rawgit.com/
 
-### [06. DOM Operations](/Topics/06. DOM Operations)
+##  Public Project Defense
+-   Each submitted project will be evaluated by the trainers. Evaluation will strictly follow the above requirements.
+-   Each team will have to deliver a public defense of its work to the other students and trainers. You will have only 10 minutes for the following:
+    -   Demonstrate the application (very shortly)
+    -   Show the source code
+    -   Show the commits logs to confirm that team member have contributed.
+    -   Optionally you might prepare a presentation (3-4 slides)
+Please be **strict in timing!** Be well prepared for presenting maximum of your work for minimum time. Bring your own laptop. Test it preliminary with the multimedia projector. Open the project assets beforehand to save time. You have 10 minutes, no more!
 
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/06. DOM Operations/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/06. DOM Operations/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/06. DOM Operations/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/06. DOM Operations/VIDEOS.md)
-
-### [07. Event Model](/Topics/07. Event Model)
-
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/07. Event Model/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/07. Event Model/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/07. Event Model/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/07. Event Model/VIDEOS.md)
-
-### [08. jQuery Overview](/Topics/08. jQuery Overview)
-
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/08. jQuery Overview/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/08. jQuery Overview/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/08. jQuery Overview/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/08. jQuery Overview/VIDEOS.md)
-
-### [09. jQuery Plugins](/Topics/09. jQuery Plugins)
-
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/09. jQuery Plugins/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/09. jQuery Plugins/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/09. jQuery Plugins/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/09. jQuery Plugins/VIDEOS.md)
-
-### [10. HTML Templates](/Topics/10. HTML Templates)
-
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/10.%20HTML%20Templates/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/10. HTML Templates/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/10. HTML Templates/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/10. HTML Templates/VIDEOS.md)
-
-### [11. DOM Performance](/Topics/11. DOM Performance)
-
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Slides](https://rawgit.com/TelerikAcademy/JavaScript-UI-and-DOM/master/Topics/11. DOM Performance/index.html) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/code.png" height="15"> Demos](/Topics/11. DOM Performance/demos) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/homework.png" height="15">Tasks](/Topics/11. DOM Performance/homework) / [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/video.png" height="15"> Videos](/Topics/11. DOM Performance/VIDEOS.md)
-
-
-<!--
-## Preparing the local machine for Unit testing with Mocha and Chai 
-
-* Install [JavaScript I/O](https://iojs.org/en/index.html "JavaScript I/O")
-    * Try if it is working by typing in CMD/Terminal `$ iojs -v` (should produce result)
-*	Open CMD/Terminal and run `$ npm install -g mocha`
-
-## Preparing for the tests for each homework
-
-*	Checkout the repository for the particular homework	
-*	Open CMD/Terminal and navigate to the checked out repository with the homework
-*	Run `npm install` in CMD/Terminal
-	*	A folder `node_modules` should appear
-*	You are ready to run the tests
-
-## Running the tests
-
-*	Navigate to the folder of the particular homework in CMD/Terminal
-*	Requirements:
-	*	JavaScript files must be called task-1.js, task-2.js etc..
-	*	Each .js file must contain `module.exports=[name of the object/function]`
-* 	Run `npm test`
-	*	Test results should appear on the CMD/Terminal
- 
-## Upload in [BGCoder.com](http://bgcoder.com/)
-
-*	Go to the specific homework
-*	Select the task you will be sending
-*	Wrap your result in:
-
-		function solve() {
-			return [your solution object/function];
-		}
--->
+##  Give Feedback about Your Teammates
+You will be invited to provide feedback about all your teammates, their attitude to this project, their technical skills, their team working skills, their contribution to the project, etc. The feedback is important part of the project evaluation so take it seriously and be honest

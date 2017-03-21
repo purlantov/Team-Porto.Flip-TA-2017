@@ -1,26 +1,59 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tetris</title>
 </head>
+
 <body>
 
-    <header>
-      <h1>Tetris</h1>
-      <h2>Team Porto Filip</h2>
-      <h3>Telerik Academy Season 8 (2016-2017)</h3>      
-      <nav>
-      <ul>
-        <li>About</li>
-        <li>How to play</li>
-        <li>Team</li>
-      </ul>
-    </nav></header>
+    <div id="main">
+        <header>
+            <h1>Tetris</h1>
+            <nav>
+                <ul>
+                    <li><a href="#instructions">How to play</a> </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="instructions" class="info">
+            <h3>How to play </h3>
+            <p>Move block: keyboard arrows left &larr; and &rarr; right</p>
+            <p>Rotate: keyboard arrow up &uarr;</p>
+            <p>Fast down: keyboard arrow down &darr;</p>
+        </section>
+
+        <section id="canvas-holder">
+            <p>Game goes here</p>
+            <!-- here be the game -->
+            <canvas id="canvas"></canvas>
+        </section>
+
+        <section id="about" class="info">
+            <h3>About </h3>
+            <p>This game is part of a teamwork project for the JavaScript UI and DOM course of Telerik Software Academy.</p>
+        </section>
+
+        <section id="team" class="info">
+            <h3>Team </h3>
+            <p>List of team members</p>
+        </section>
+
+        <footer>
+            <p>Created by : <a href="https://github.com/purlantov/Team-Porto.Flip-TA-2017" target="_blank">Team Porto Filip</a></p>
+            <p>Telerik Academy Season 8 (2016-2017)</p>
+        </footer>
+    </div>
 
     <script src="./main.js"></script>
-    <img src="./imgs/background.png" alt="">
 </body>
+
 </html>

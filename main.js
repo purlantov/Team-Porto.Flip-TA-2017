@@ -1,3 +1,3 @@
 function testNH (){
-    // test GitHub clone, edit, push
+    // test  GitHub clone, edit, push
 }

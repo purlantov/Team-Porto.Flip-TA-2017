@@ -62,8 +62,8 @@ nav li {
 }
 
 canvas {
-    width: 350px;
-    height: 400px;
+    /*width: 350px;
+    height: 600px;*/
     margin: auto;
     display: block;
     border: 5px solid #909090;

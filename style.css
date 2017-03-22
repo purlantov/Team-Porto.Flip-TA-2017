@@ -1,6 +1,6 @@
 body {
     background-image: url("imgs/circles-squares.jpg");
-    background-color: #cccccc;
+    background-color: #202020;
     font-family: 'Ubuntu', Arial, sans-serif;
 }
 
@@ -22,7 +22,8 @@ footer {
     margin: auto;
     padding: 5px;
     color: #eee;
-    background-color: rgba( 0, 0, 0, 0.9);
+    background-color: rgba( 0, 0, 0, 0.8);
+    border-radius: 8px;
 }
 
 #canvas-holder p {
@@ -31,14 +32,15 @@ footer {
     line-height: 1.5em;
 }
 
-.info{
+.info {
     padding: 5px 10px;
     font-size: 0.9em;
 }
 
-.info h3{
-  margin: 8px 0;
+.info h3 {
+    margin: 8px 0;
 }
+
 .info p {
     margin: 0;
     line-height: 1.5em;
@@ -70,10 +72,17 @@ canvas {
 }
 
 a {
-    padding: 5px 10px;
     text-decoration: none;
     color: #eee;
     border-radius: 2px;
+}
+
+nav a {
+    padding: 5px 10px;
+}
+
+footer a {
+    padding: 2px;
 }
 
 a:hover {

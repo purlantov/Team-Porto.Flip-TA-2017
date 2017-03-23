@@ -15,7 +15,7 @@ function get(id) {
 
 var canvas = get('canvas');
 var ctx = canvas.getContext('2d');
-canvas.width  = 350;
+canvas.width = 350;
 canvas.height = 600;
 ctx.scale(20, 20);
 
@@ -28,9 +28,14 @@ var DIR = {
     MAX: 3
 };
 
+//
+// Objects that represent each block element
+// Blocks are T, J, L, S, Z, I, O
+// Each block has property block with four rotation position inside
+//
 t = {
     size: 3,
-    color: 'purple',    
+    color: 'purple',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -61,7 +66,7 @@ t = {
 
 j = {
     size: 3,
-    color: 'blue',    
+    color: 'blue',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -92,7 +97,7 @@ j = {
 
 l = {
     size: 3,
-    color: 'orange',    
+    color: 'orange',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -123,7 +128,7 @@ l = {
 
 z = {
     size: 3,
-    color: 'red',    
+    color: 'red',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -154,7 +159,7 @@ z = {
 
 s = {
     size: 3,
-    color: 'green',    
+    color: 'green',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -185,7 +190,7 @@ s = {
 
 i = {
     size: 3,
-    color: '#ADD8E6',    
+    color: '#ADD8E6',
     blocks: [
         [
             [0, 0, 0, 0],
@@ -257,11 +262,21 @@ function drawBlock(block, k, offsetX, offsetY) {
     });
 }
 
+function draw() {
+    drawBlock(t, 2, 0, 0);
+}
 
-drawBlock(t, 2, 0, 0);
-drawBlock(j, 2, 3, 3);
-drawBlock(l, 2, 6, 6);
-drawBlock(z, 2, 2, 6);
-drawBlock(s, 2, 12, 12);
-drawBlock(i, 2, 2, 12);
-drawBlock(o, 2, 5, 20);
+ function update() {
+    draw();
+    requestAnimationFrame(update);
+}
+
+update();
+
+// drawBlock(t, 2, 0, 0);
+// drawBlock(j, 2, 3, 3);
+// drawBlock(l, 2, 6, 6);
+// drawBlock(z, 2, 2, 6);
+// drawBlock(s, 2, 12, 12);
+// drawBlock(i, 2, 2, 12);
+// drawBlock(o, 2, 5, 20);

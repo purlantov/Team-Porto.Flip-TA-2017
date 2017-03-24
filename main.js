@@ -241,6 +241,8 @@ o = {
     ]
 }
 
+var blocks = [t, j, l, s, z, i, o];
+
 
 function drawBlock(block, k, offsetX, offsetY) {
     block.blocks[k].forEach((row, y) => {
@@ -258,13 +260,25 @@ let player = {
         x: 0,
         y: 0
     },
-    direction: 0 // starts from first block direction
+    direction: 0, // starts from first block direction
+    block: blocks[0]
 };
 
 function draw() {
     ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    drawBlock(t, player.direction, player.position.x, player.position.y);
+    drawBlock(player.block, player.direction, player.position.x, player.position.y);
+}
+
+function nextBlock() {
+
+  // TODO random next block
+
+    // if (player.block >= 6) {
+    //     player.block = 0;
+    // } else {
+    //     player.block += 1;
+    // }
 }
 
 function update() {
@@ -292,11 +306,3 @@ document.addEventListener('keydown', event => {
 });
 
 update();
-
-// drawBlock(t, 2, 0, 0);
-// drawBlock(j, 2, 3, 3);
-// drawBlock(l, 2, 6, 6);
-// drawBlock(z, 2, 2, 6);
-// drawBlock(s, 2, 12, 12);
-// drawBlock(i, 2, 2, 12);
-// drawBlock(o, 2, 5, 20);

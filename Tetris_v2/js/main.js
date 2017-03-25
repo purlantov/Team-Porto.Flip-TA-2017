@@ -64,4 +64,10 @@ document.addEventListener('keydown', event => {
     }
 });
 
+const buttonNew = document.getElementById('newGame');
+buttonNew.addEventListener("click", startNewGame);
+
+const buttonPause = document.getElementById('pause');
+buttonPause.addEventListener("click", pauseGame);
+
 update();

@@ -94,10 +94,12 @@ function arenaSweep() {
     }
 }
 
-//ScoreBoard
+let totalScore = document.getElementById('totalScore');
+let addedScore = 10;
+
 function updateScore() {
     player.score += addedScore;
-    totalScore.value = player.score;
+    totalScore.innerText = player.score;
     if(player.score === player.scoreToLevelUp)
     {
         addedScore += 20;

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Tetris</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
@@ -11,14 +12,28 @@
     	<canvas id="tetris"></canvas>
 	
 		<div id="Score">
-			<input type="text" id = 'totalScore' />
-			<img src = "images/I.png" id="I">
-			<img src = "images/J.png" id="J">
-			<img src = "images/L.png" id="L">
-			<img src = "images/O.png" id="O">
-			<img src = "images/S.png" id="S">
-			<img src = "images/T.png" id="T">
-			<img src = "images/Z.png" id="Z">
+			<div class="nextBlock">
+				<h2>Next block:</h2>
+				<div class="nextBlock__img">
+					<img src = "images/I.png" id="I">
+					<img src = "images/J.png" id="J">
+					<img src = "images/L.png" id="L">
+					<img src = "images/O.png" id="O">
+					<img src = "images/S.png" id="S">
+					<img src = "images/T.png" id="T">
+					<img src = "images/Z.png" id="Z">
+				</div>
+			</div>
+
+			<div class="score">
+				<h2>Score: <span id="totalScore">0</span></h2>				
+			</div>
+			<section id="instructions" class="info">
+	            <h2>How to play </h3>
+	            <p>Move block: keyboard arrows left ← and → right</p>
+	            <p>Rotate: keyboard arrow up ↑</p>
+	            <p>Fast down: keyboard arrow down ↓</p>
+	        </section>
 		</div>
 		
 	    <script src="js/blocks.js"></script>

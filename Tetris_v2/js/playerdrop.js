@@ -80,9 +80,10 @@ function playerReset() {
 
     let gameOver = collide(arena, player);
     if (gameOver) {
-        // To do: fix game over message
-        alert('Game over. \nPress ok to start a new game.')
-        startNewGame();
+        // To do: fix game over message appears only on arrow down
+        gamePaused = true;
+        playerDrop();
+        drawGameOver();
     }
 }
 
@@ -126,5 +127,7 @@ function pauseGame() {
 
 function startNewGame() {
     arena.forEach(row => row.fill(0));
+    gamePaused = false;
     playerReset();
+    update();
 }

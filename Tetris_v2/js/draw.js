@@ -32,11 +32,22 @@ function drawMatrix(matrix, offset) {
 }
 
 function drawPause() {
-    context.fillStyle = "rgba(0, 0, 30, 0.5)";
-    context.fillRect(0, 250, canvas.width, 150);
+    messageBackground();
     context.font = "26pt Calibri";
     context.fillStyle = "#FFF";
     context.fillText("GAME PAUSED", canvas.width / 4, 320);
     context.font = "20pt Calibri";
     context.fillText("(press Esc to resume)", canvas.width / 4.5, 360);
+}
+
+function drawGameOver() {
+    messageBackground();
+    context.font = "26pt Calibri";
+    context.fillStyle = "#FFF";
+    context.fillText("GAME OVER", canvas.width / 3.5, 340);
+}
+
+function messageBackground() {
+    context.fillStyle = "rgba(0, 0, 30, 0.5)";
+    context.fillRect(0, 250, canvas.width, 150);
 }

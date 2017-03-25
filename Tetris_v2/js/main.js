@@ -50,11 +50,13 @@ document.addEventListener('keydown', event => {
 
     // Fast drop
     else if (event.code === 'Space') {
-        for (let i = 0; i < 20; i = i + 1) {
-            if (player.pos.y === 0) {
-                break;
+        if (!pauseGame) {
+            for (let i = 0; i < 20; i = i + 1) {
+                if (player.pos.y === 0) {
+                    break;
+                }
+                playerDrop();
             }
-            playerDrop();
         }
     }
 

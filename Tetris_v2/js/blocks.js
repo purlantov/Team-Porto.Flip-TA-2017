@@ -46,11 +46,11 @@ function createPiece(type) {
 
 const colors = [
     null,
-    '#FF0D72',
-    '#0DC2FF',
-    '#0DFF72',
-    '#F538FF',
-    '#FF8E0D',
-    '#FFE138',
-    '#3877FF'
+    '#8a2be2',
+    '#FFFA34',
+    '#FFA500',
+    '#0000FF',
+    '#2DDDDD',
+    '#00B800',
+    '#FF0000'
 ];

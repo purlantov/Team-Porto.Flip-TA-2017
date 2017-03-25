@@ -5,7 +5,8 @@ let Score = document.getElementById("Score")
 let totalScore = Score.firstElementChild;
 let addedScore = 10;
 
-context.scale(35, 35);
+const k = 35;
+//context.scale(35, 35);
 
 let lastTime = 0,
     dropCounter = 0,

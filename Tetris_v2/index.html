@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Tetris</title>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
 
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
+
 <body>
-	<div class="wrap">
-    	<canvas id="tetris"></canvas>
+    <div class="wrap">
+        <canvas id="tetris"></canvas>
 
-		<div id="Score">
-			<div class="nextBlock">
-				<h2>Next block:</h2>
-				<div class="nextBlock__img">
-					<img src = "images/I.png" id="I">
-					<img src = "images/J.png" id="J">
-					<img src = "images/L.png" id="L">
-					<img src = "images/O.png" id="O">
-					<img src = "images/S.png" id="S">
-					<img src = "images/T.png" id="T">
-					<img src = "images/Z.png" id="Z">
-				</div>
-			</div>
 
-			<div class="score">
-				<h2>Score: <span id="totalScore">0</span></h2>
-			</div>
-			<section id="instructions" class="info">
-	            <h2>How to play </h3>
-	            <p>Move block: keyboard arrows left ← and → right</p>
-	            <p>Rotate: keyboard arrow up ↑</p>
-	            <p>Fast down: keyboard arrow down ↓</p>
-	        </section>
-		</div>
+        <div id="Score">
+            <div class="nextBlock">
+                <h2>Next block:</h2>
+                <div class="nextBlock__img">
+                    <img src="images/I.png" id="I">
+                    <img src="images/J.png" id="J">
+                    <img src="images/L.png" id="L">
+                    <img src="images/O.png" id="O">
+                    <img src="images/S.png" id="S">
+                    <img src="images/T.png" id="T">
+                    <img src="images/Z.png" id="Z">
+                </div>
+            </div>
 
-	    <script src="js/blocks.js"></script>
-	    <script src="js/draw.js"></script>
-	    <script src="js/playermove.js"></script>
-	    <script src="js/playerdrop.js"></script>
-	    <script src="js/main.js"></script>
+            <div class="score">
+                <h2>Score: <span id="totalScore">0</span></h2>
+            </div>
+            <section id="instructions" class="info">
+                <h2>How to play </h3>
+                    <p>Move block: keyboard arrows left ← and → right</p>
+                    <p>Rotate: keyboard arrow up ↑</p>
+                    <p>Fast down: keyboard arrow down ↓ </p>
+                    <p>Land down: Spacebar</p>
+                    <p>Pause: keyboard Esc</p>
+            </section>
+            <section>
+                <button id="newGame" type="start">New game</button>
+                <button id="pause" type="start">Pause</button>
+            </section>
+        </div>
 
-	</div>
+        <script src="js/blocks.js"></script>
+        <script src="js/draw.js"></script>
+        <script src="js/playermove.js"></script>
+        <script src="js/playerdrop.js"></script>
+        <script src="js/main.js"></script>
+
+    </div>
 </body>
+
 </html>

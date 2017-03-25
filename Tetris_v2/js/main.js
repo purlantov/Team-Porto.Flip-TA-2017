@@ -38,19 +38,19 @@ document.addEventListener('keydown', event => {
         playerMove(1);
     }
 
-    // Move down faster
-    else if (event.code === 'ArrowDown') {
-        playerDrop();
-    }
-
     // Rotate right
     else if (event.code === 'ArrowUp') {
         playerRotate(1);
     }
 
+    // Move down faster
+    else if (event.code === 'ArrowDown') {
+        playerDrop();
+    }
+
     // Fast drop
     else if (event.code === 'Space') {
-        if (!pauseGame) {
+        if (!gamePaused) {
             for (let i = 0; i < 20; i = i + 1) {
                 if (player.pos.y === 0) {
                     break;

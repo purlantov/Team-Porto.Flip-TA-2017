@@ -82,7 +82,6 @@ function playerReset() {
     if (gameOver) {
         // To do: fix game over message appears only on arrow down
         gamePaused = true;
-        playerDrop();
         drawGameOver();
     }
 }

@@ -3,10 +3,6 @@ canvas.width = '420';
 canvas.height = '700';
 const context = canvas.getContext('2d');
 
-let Score = document.getElementById("Score")
-let totalScore = Score.firstElementChild;
-let addedScore = 10;
-
 const k = 35;
 //context.scale(35, 35);
 

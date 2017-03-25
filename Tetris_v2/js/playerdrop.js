@@ -44,11 +44,11 @@ function collide(arena, player) {
                 (arena[y + o.y] // arena-row exist (is not 0) 
                     &&
                     arena[y + o.y][x + o.x]) !== 0) {
-                return true; //coolision true
+                return true; //collision true
             }
         }
     }
-    return false; // no coolision
+    return false; // no collision
 }
 
 function merge(arena, player) {
@@ -63,6 +63,7 @@ function merge(arena, player) {
 
 let randomize = pieces[(Math.random() * pieces.length) | 0];
 
+// Gets new piece
 function playerReset() {
     player.matrix = createPiece(randomize);
     let image = document.getElementById(randomize);
@@ -73,11 +74,14 @@ function playerReset() {
 
     image.className = "active";
 
+    // To do: pieces start from out of the matrix?
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
 
-    if (collide(arena, player)) {
-        alert("Game over. Pres OK to start a new game");
+    let gameOver = collide(arena, player);
+    if (gameOver) {
+        // To do: fix game over message
+        alert('Game over. \nPress ok to start a new game.')
         startNewGame();
     }
 }
@@ -109,8 +113,18 @@ function updateScore() {
     }
 }
 
-function startNewGame(params) {
+function pauseGame() {
+    if (!gamePaused) {
+        gamePaused = true;
+        drawPause();
+
+    } else if (gamePaused) {
+        gamePaused = false;
+        update();
+    }
+}
+
+function startNewGame() {
     arena.forEach(row => row.fill(0));
     playerReset();
-    update();
 }

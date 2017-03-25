@@ -41,14 +41,3 @@ function playerRotate(dir) {
         }
     }
 }
-
-function pauseGame() {
-    if (!gamePaused) {
-        gamePaused = true;
-        drawPause();
-
-    } else if (gamePaused) {
-        gamePaused = false;
-        update();
-    }
-}

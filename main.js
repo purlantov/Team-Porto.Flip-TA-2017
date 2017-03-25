@@ -2,17 +2,6 @@ function get(id) {
     return document.getElementById(id);
 }
 
-// if (!window.requestAnimationFrame) {
-//     // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-//     window.requestAnimationFrame = window.webkitRequestAnimationFrame ||
-//         window.mozRequestAnimationFrame ||
-//         window.oRequestAnimationFrame ||
-//         window.msRequestAnimationFrame ||
-//         function (callback, element) {
-//             window.setTimeout(callback, 1000 / 60);
-//         }
-// }
-
 var canvas = get('canvas');
 var ctx = canvas.getContext('2d');
 
@@ -26,17 +15,23 @@ let player = {
     block: blocks[0]
 };
 
+function gravity() {
 
+    if (player.position.y < canvas.height/20-3) {
+            player.position.y += 0.15;
+            console.log(player.position.y);
+    }
+}
 
 function nextBlock() {
+    // TODO: random next block
 
-    // TODO random next block
-
-    // if (player.block >= 6) {
-    //     player.block = 0;
-    // } else {
-    //     player.block += 1;
-    // }
+    if (player.block >= 6) {
+        player.block = 0;
+    } else {
+        player.block += 1;
+    }
+    draw();
 }
 
 
@@ -52,7 +47,7 @@ document.addEventListener('keydown', event => {
             player.direction += 1;
         }
     }
-    if (event.keyCode === 39 && player.position.x+2 < canvas.width / 20) {
+    if (event.keyCode === 39 && player.position.x + 3 < canvas.width / 20) {
         player.position.x += 1;
     }
     if (event.keyCode === 40) {

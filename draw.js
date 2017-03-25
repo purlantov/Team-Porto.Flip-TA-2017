@@ -2,8 +2,8 @@ canvas.width = 200;
 canvas.height = 360;
 ctx.scale(20, 20);
 
-function drawBlock(block, k, offsetX, offsetY) {
-    block.blocks[k].forEach((row, y) => {
+function drawBlock(block, type, offsetX, offsetY) {
+    block.blocks[type].forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
                 ctx.fillStyle = block.color;
@@ -18,15 +18,19 @@ function drawBlock(block, k, offsetX, offsetY) {
 
 
 function draw() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    // ctx.fillStyle = '#000000';
-    // ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBlock(player.block, player.direction, player.position.x, player.position.y);
 }
 
 function update() {
+    gravity();
     draw();
     requestAnimationFrame(update);
+    if (player.position.y===canvas.height/20) {
+        player.position.y=0;
+        player.position.x=0;
+        nextBlock();
+    }
 }
 
 update();

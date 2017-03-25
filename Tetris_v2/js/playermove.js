@@ -47,13 +47,14 @@ function pauseGame() {
         gamePaused = true;
 
         // todo put drawing in the draw.js file
-        context.fillStyle = "rgba(0, 0, 0, 0.5)";
-        context.fillRect(0, 8, canvas.width, 50);
-        context.font = "16pt Calibri";
+        context.fillStyle = "rgba(0, 0, 30, 0.5)";
+        //context.fillStyle = "red";
+        context.fillRect(0, 250, canvas.width, 150);
+        context.font = "26pt Calibri";
         context.fillStyle = "#FFF";
-        context.fillText("GAME PAUSED", 30, 30);
-        context.font = "14pt Calibri";
-        context.fillText("(press Esc to resume)", 30, 30);
+        context.fillText("GAME PAUSED", canvas.width / 4, 320);
+        context.font = "20pt Calibri";
+        context.fillText("(press Esc to resume)", canvas.width / 4.5, 360);
 
     } else if (gamePaused) {
         gamePaused = false;

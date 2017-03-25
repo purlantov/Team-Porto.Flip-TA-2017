@@ -22,6 +22,7 @@ function playerDrop() {
 }
 
 const arena = createMatrix(12, 20);
+
 function createMatrix(width, height) {
     const matrix = [];
 
@@ -67,16 +68,17 @@ function playerReset() {
     let image = document.getElementById(randomize);
     image.className = "active";
     randomize = pieces[pieces.length * Math.random() | 0];
-    image.className="";
-     image = document.getElementById(randomize);
-    
+    image.className = "";
+    image = document.getElementById(randomize);
+
     image.className = "active";
 
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
 
     if (collide(arena, player)) {
-        arena.forEach(row => row.fill(0));
+        alert("Game over. Pres OK to start a new game");
+        startNewGame();
     }
 }
 
@@ -100,10 +102,15 @@ let addedScore = 10;
 function updateScore() {
     player.score += addedScore;
     totalScore.innerText = player.score;
-    if(player.score === player.scoreToLevelUp)
-    {
+    if (player.score === player.scoreToLevelUp) {
         addedScore += 20;
-        player.scoreToLevelUp = player.scoreToLevelUp*2;
+        player.scoreToLevelUp = player.scoreToLevelUp * 2;
         dropinteval = dropinteval - 10;
     }
+}
+
+function startNewGame(params) {
+    arena.forEach(row => row.fill(0));
+    playerReset();
+    update();
 }

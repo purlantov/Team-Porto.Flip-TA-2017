@@ -24,8 +24,18 @@ body {
 }
 
 .wrap {
-	max-width: 960px;
-	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.6);
+	max-width: 660px;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-family: Impact;
+	color: #fff;
 }
 
 #Score {

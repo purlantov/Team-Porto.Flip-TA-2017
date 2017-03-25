@@ -1,5 +1,4 @@
 const pieces = 'ILJOTSZ';
-let randomize=pieces[pieces.length * Math.random() | 0];
 
 const player = {
     pos: { x: 5, y: 0 },
@@ -61,9 +60,10 @@ function merge(arena, player) {
     });
 }
 
+let randomize = pieces[(Math.random() * pieces.length) | 0];
+
 function playerReset() {
-    
-    player.matrix =createPiece(randomize);
+    player.matrix = createPiece(randomize);
     let image = document.getElementById(randomize);
     image.className = "active";
     randomize = pieces[pieces.length * Math.random() | 0];
@@ -91,5 +91,17 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y += 1;
+    }
+}
+
+//ScoreBoard
+function updateScore() {
+    player.score += addedScore;
+    totalScore.value = player.score;
+    if(player.score === player.scoreToLevelUp)
+    {
+        addedScore += 20;
+        player.scoreToLevelUp = player.scoreToLevelUp*2;
+        dropinteval = dropinteval - 10;
     }
 }

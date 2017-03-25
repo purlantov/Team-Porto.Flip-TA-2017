@@ -67,17 +67,4 @@ document.addEventListener('keydown', event => {
     }
 });
 
-//ScoreBoard
-function updateScore() {
-    player.score += addedScore;
-    totalScore.value = player.score;
-    if(player.score === player.scoreToLevelUp)
-    {
-        addedScore += 20;
-        player.scoreToLevelUp = player.scoreToLevelUp*2;
-        dropinteval = dropinteval - 10;
-    }
-    
-}
-
 update();

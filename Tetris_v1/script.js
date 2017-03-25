@@ -265,7 +265,24 @@ document, addEventListener('keydown', event => {
     else if (event.keyCode === 87) {
         playerRotate(1);
     }
+
+
+
+    // add instant drop ----------------------------------------------------**********++++++++*************
+    else if (event.keyCode === 32) {
+        //player.pos.x += 1;
+        for(let i=0;i<20;i=i+1)
+        {
+            if(player.pos.y === 0)
+            {
+                break;
+            }
+            playerDrop();
+        }
+    }
 });
+//--------------------------------------------------------
+
 
 //CLEAN ROWS-------------------------------------------------------------------
 function arenaSweep() {

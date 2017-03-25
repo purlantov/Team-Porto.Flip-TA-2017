@@ -45,16 +45,7 @@ function playerRotate(dir) {
 function pauseGame() {
     if (!gamePaused) {
         gamePaused = true;
-
-        // todo put drawing in the draw.js file
-        context.fillStyle = "rgba(0, 0, 30, 0.5)";
-        //context.fillStyle = "red";
-        context.fillRect(0, 250, canvas.width, 150);
-        context.font = "26pt Calibri";
-        context.fillStyle = "#FFF";
-        context.fillText("GAME PAUSED", canvas.width / 4, 320);
-        context.font = "20pt Calibri";
-        context.fillText("(press Esc to resume)", canvas.width / 4.5, 360);
+        drawPause();
 
     } else if (gamePaused) {
         gamePaused = false;

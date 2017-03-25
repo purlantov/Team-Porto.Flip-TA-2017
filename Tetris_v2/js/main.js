@@ -14,56 +14,57 @@ let lastTime = 0,
     dropCounter = 0,
     dropinteval = 150;
 
+let gamePaused = false;
+
 function update(time = 0) {
     const deltaTime = time - lastTime;
     lastTime = time;
     dropCounter += deltaTime;
 
-    if (dropCounter > dropinteval) {
-        playerDrop(); // playerdrop.js
-    }
+    if (!gamePaused) {
+        if (dropCounter > dropinteval) {
+            playerDrop(); // playerdrop.js
+        }
 
-    draw(); // draw.js
-    requestAnimationFrame(update);
+        draw(); // draw.js
+        requestAnimationFrame(update);
+    }
 }
 
 document.addEventListener('keydown', event => {
-    //move left
-    if (event.keyCode === 37) {
-        //player.pos.x -= 1;
+    // Move left
+    if (event.code === 'ArrowLeft') {
         playerMove(-1); // playermove.js
     }
 
-    //move right
-    else if (event.keyCode === 39) {
-        //player.pos.x += 1;
+    // Move right
+    else if (event.code === 'ArrowRight') {
         playerMove(1);
     }
 
-    //move down
-    else if (event.keyCode === 40) {
+    // Move down faster
+    else if (event.code === 'ArrowDown') {
         playerDrop();
     }
 
-    //playerRotate right
-    else if (event.keyCode === 81) {
-        playerRotate(-1);
-    }
-
-    //playerRotate left
-    else if (event.keyCode === 87) {
+    // Rotate right
+    else if (event.code === 'ArrowUp') {
         playerRotate(1);
     }
-    else if (event.keyCode === 32) {
-        //player.pos.x += 1;
-        for(let i=0;i<20;i=i+1)
-        {
-            if(player.pos.y === 0)
-            {
+
+    // Fast drop
+    else if (event.code === 'Space') {
+        for (let i = 0; i < 20; i = i + 1) {
+            if (player.pos.y === 0) {
                 break;
             }
             playerDrop();
         }
+    }
+
+    // Pause game
+    else if (event.keyCode === 27) {
+        pauseGame();
     }
 });
 

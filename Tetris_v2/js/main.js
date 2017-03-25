@@ -1,6 +1,10 @@
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
 
+let Score = document.getElementById("Score")
+let totalScore = Score.firstElementChild;
+let addedScore = 10;
+
 context.scale(35, 35);
 
 let lastTime = 0,
@@ -47,11 +51,30 @@ document.addEventListener('keydown', event => {
     else if (event.keyCode === 87) {
         playerRotate(1);
     }
+    else if (event.keyCode === 32) {
+        //player.pos.x += 1;
+        for(let i=0;i<20;i=i+1)
+        {
+            if(player.pos.y === 0)
+            {
+                break;
+            }
+            playerDrop();
+        }
+    }
 });
 
 //ScoreBoard
 function updateScore() {
-    document.getElementById('score').innerHTML = player.score;
+    player.score += addedScore;
+    totalScore.value = player.score;
+    if(player.score === player.scoreToLevelUp)
+    {
+        addedScore += 20;
+        player.scoreToLevelUp = player.scoreToLevelUp*2;
+        dropinteval = dropinteval - 10;
+    }
+    
 }
 
 update();

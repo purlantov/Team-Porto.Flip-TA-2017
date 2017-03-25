@@ -1,4 +1,6 @@
 const canvas = document.getElementById('tetris');
+canvas.width = '420';
+canvas.height = '700';
 const context = canvas.getContext('2d');
 
 let Score = document.getElementById("Score")

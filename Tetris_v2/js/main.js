@@ -49,6 +49,7 @@ function pauseGame() {
 }
 
 document.addEventListener('keydown', event => {
+    console.log(event);
     // Move left
     if (event.code === 'ArrowLeft') {
         pieceMove(-1); // playermove.js
@@ -82,6 +83,11 @@ document.addEventListener('keydown', event => {
     // Pause game
     else if (event.code === 'Escape') {
         pauseGame();
+    }
+
+    // Start new game
+    else if (event.code === 'F2') {
+        startNewGame();
     }
 });
 

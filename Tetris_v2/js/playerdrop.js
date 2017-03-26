@@ -2,6 +2,7 @@ const pieces = 'ILJOTSZ';
 
 const piece = {
     pos: { x: 5, y: 0 },
+    // TO DO: Random initial piece
     matrix: createPiece('T'), // blocks.js
 };
 
@@ -9,10 +10,15 @@ function pieceDrop() {
     piece.pos.y += 1;
     if (collide(arena, piece)) {
         piece.pos.y -= 1;
-        merge(arena, piece);
+        if (piece.pos.y < 0) {
+            gameOver = true;
+            return;
+        } else {
+            merge(arena, piece);
 
-        getNewPiece();
-        arenaSweep();
+            getNewPiece();
+            arenaSweep();
+        }
     }
 }
 
@@ -38,7 +44,10 @@ function collide(arena, piece) {
     //const [m, o] = [piece.matrix, piece.pos];
     for (let row = 0; row < piece.matrix.length; row += 1) {
         for (let col = 0; col < piece.matrix[row].length; col += 1) {
-
+            // Skip if the piece is still outside the matrix
+            if (row + piece.pos.y < 0) {
+                continue;
+            }
             // Disregard piece matrix zero values
             if (piece.matrix[row][col] !== 0 &&
                 // Check if arena-row exists
@@ -56,6 +65,7 @@ function collide(arena, piece) {
 function merge(arena, piece) {
     piece.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
+            // Check if this always works correctly
             if (value !== 0) {
                 arena[y + piece.pos.y][x + piece.pos.x] = value;
             }
@@ -67,6 +77,7 @@ let randomize = pieces[(Math.random() * pieces.length) | 0];
 
 // Gets new piece
 function getNewPiece() {
+    // TO DO extract to a separate method or simplify
     piece.matrix = createPiece(randomize);
     let image = document.getElementById(randomize);
     image.className = "active";
@@ -76,15 +87,18 @@ function getNewPiece() {
 
     image.className = "active";
 
-    // To do: pieces start from out of the matrix?
-    piece.pos.y = 0;
+    // Pieces start from outside of the matrix
+    //piece.pos.y = 0;
+    piece.pos.y = -piece.matrix.length;
+
+    // TO DO: Random initial pos.x
     piece.pos.x = (arena[0].length / 2 | 0) - (piece.matrix[0].length / 2 | 0);
 
     let gameOver = collide(arena, piece);
     if (gameOver) {
         // To do: fix game over message appears only on arrow down
-        gamePaused = true;
-        drawGameOver();
+        // gamePaused = true;
+        // drawGameOver();
     }
 }
 

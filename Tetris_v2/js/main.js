@@ -11,6 +11,7 @@ let lastTime = 0,
     dropInterval = 150;
 
 let gamePaused = false;
+let gameOver = false;
 
 
 function update(time = 0) {
@@ -33,6 +34,10 @@ function update(time = 0) {
     if (!gamePaused) {
         if (dropCounter > dropInterval) {
             pieceDrop(); // playerdrop.js
+            if (gameOver) {
+                drawGameOver();
+                return;
+            }
             dropCounter = 0;
         }
 
@@ -44,6 +49,7 @@ function update(time = 0) {
 function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
+    gameOver = false;
     currentPlayer = new Player();
     totalScore.innerText = 0;
     getNewPiece();
@@ -51,7 +57,7 @@ function startNewGame() {
 }
 
 function pauseGame() {
-    if (!gamePaused) {
+    if (!gamePaused && !gameOver) {
         gamePaused = true;
         drawPause();
 

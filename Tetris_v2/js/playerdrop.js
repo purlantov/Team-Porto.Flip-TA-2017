@@ -1,24 +1,27 @@
 const pieces = 'ILJOTSZ';
 
-const player = {
+const piece = {
     pos: { x: 5, y: 0 },
     matrix: createPiece('T'), // blocks.js
-    score: 0,
-    level: 1,
-    scoreToLevelUp: 20
 };
 
-function playerDrop() {
-    player.pos.y += 1;
-    if (collide(arena, player)) {
-        player.pos.y -= 1;
-        merge(arena, player);
+function pieceDrop() {
+    piece.pos.y += 1;
+    if (collide(arena, piece)) {
+        piece.pos.y -= 1;
+        merge(arena, piece);
 
-        playerReset();
+        getNewPiece();
         arenaSweep();
     }
 
     dropCounter = 0;
+}
+
+function Player() {
+    this.score = 0;
+    this.level = 1;
+    this.scoreToLevelUp = 20;
 }
 
 const arena = createMatrix(12, 20);
@@ -34,12 +37,12 @@ function createMatrix(width, height) {
     return matrix;
 }
 
-function collide(arena, player) {
-    const [m, o] = [player.matrix, player.pos];
+function collide(arena, piece) {
+    const [m, o] = [piece.matrix, piece.pos];
     for (let y = 0; y < m.length; y += 1) {
         for (let x = 0; x < m[y].length; x += 1) {
 
-            if (m[y][x] !== 0 //if player y-row x-colum !==0  
+            if (m[y][x] !== 0 //if piece y-row x-colum !==0  
                 &&
                 (arena[y + o.y] // arena-row exist (is not 0) 
                     &&
@@ -51,11 +54,11 @@ function collide(arena, player) {
     return false; // no collision
 }
 
-function merge(arena, player) {
-    player.matrix.forEach((row, y) => {
+function merge(arena, piece) {
+    piece.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                arena[y + player.pos.y][x + player.pos.x] = value;
+                arena[y + piece.pos.y][x + piece.pos.x] = value;
             }
         });
     });
@@ -64,8 +67,8 @@ function merge(arena, player) {
 let randomize = pieces[(Math.random() * pieces.length) | 0];
 
 // Gets new piece
-function playerReset() {
-    player.matrix = createPiece(randomize);
+function getNewPiece() {
+    piece.matrix = createPiece(randomize);
     let image = document.getElementById(randomize);
     image.className = "active";
     randomize = pieces[pieces.length * Math.random() | 0];
@@ -75,10 +78,10 @@ function playerReset() {
     image.className = "active";
 
     // To do: pieces start from out of the matrix?
-    player.pos.y = 0;
-    player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
+    piece.pos.y = 0;
+    piece.pos.x = (arena[0].length / 2 | 0) - (piece.matrix[0].length / 2 | 0);
 
-    let gameOver = collide(arena, player);
+    let gameOver = collide(arena, piece);
     if (gameOver) {
         // To do: fix game over message appears only on arrow down
         gamePaused = true;
@@ -97,18 +100,20 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y += 1;
+        console.log(currentPlayer.score);
     }
 }
 
 let totalScore = document.getElementById('totalScore');
+let currentPlayer = new Player();
 let addedScore = 10;
 
 function updateScore() {
-    player.score += addedScore;
-    totalScore.innerText = player.score;
-    if (player.score === player.scoreToLevelUp) {
+    currentPlayer.score += addedScore;
+    totalScore.innerText = currentPlayer.score;
+    if (currentPlayer.score === currentPlayer.scoreToLevelUp) {
         addedScore += 20;
-        player.scoreToLevelUp = player.scoreToLevelUp * 2;
+        currentPlayer.scoreToLevelUp = currentPlayer.scoreToLevelUp * 2;
         dropinteval = dropinteval - 10;
     }
 }
@@ -127,6 +132,7 @@ function pauseGame() {
 function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
-    playerReset();
+    currentPlayer = new Player();
+    getNewPiece();
     update();
 }

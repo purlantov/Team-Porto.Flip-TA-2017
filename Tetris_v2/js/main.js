@@ -12,6 +12,7 @@ let lastTime = 0,
 
 let gamePaused = false;
 
+
 function update(time = 0) {
     const deltaTime = time - lastTime;
     lastTime = time;
@@ -19,7 +20,7 @@ function update(time = 0) {
 
     if (!gamePaused) {
         if (dropCounter > dropinteval) {
-            playerDrop(); // playerdrop.js
+            pieceDrop(); // playerdrop.js
         }
 
         draw(); // draw.js
@@ -30,38 +31,37 @@ function update(time = 0) {
 document.addEventListener('keydown', event => {
     // Move left
     if (event.code === 'ArrowLeft') {
-        playerMove(-1); // playermove.js
+        pieceMove(-1); // playermove.js
     }
 
     // Move right
     else if (event.code === 'ArrowRight') {
-        playerMove(1);
+        pieceMove(1);
     }
 
     // Rotate right
     else if (event.code === 'ArrowUp') {
-        playerRotate(1);
+        pieceRotate(1);
     }
 
     // Move down faster
     else if (event.code === 'ArrowDown') {
-        playerDrop();
+        pieceDrop();
     }
 
     // Fast drop
-    else if (event.code === 'Space') {
-        if (!gamePaused) {
-            for (let i = 0; i < 20; i = i + 1) {
-                if (player.pos.y === 0) {
-                    break;
-                }
-                playerDrop();
+    else if (event.code === 'Space' && !gamePaused) {
+        // What is 20?
+        for (let i = 0; i < 20; i += 1) {
+            if (piece.pos.y === 0) {
+                break;
             }
+            pieceDrop();
         }
     }
 
     // Pause game
-    else if (event.keyCode === 27) {
+    else if (event.code === 'Escape') {
         pauseGame();
     }
 });

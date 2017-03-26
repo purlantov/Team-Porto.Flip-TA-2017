@@ -1,7 +1,7 @@
-function playerMove(dir) {
-    player.pos.x += dir;
-    if (collide(arena, player)) {
-        player.pos.x -= dir;
+function pieceMove(dir) {
+    piece.pos.x += dir;
+    if (collide(arena, piece)) {
+        piece.pos.x -= dir;
     }
 }
 
@@ -24,19 +24,19 @@ function rotate(matrix, dir) {
     }
 }
 
-function playerRotate(dir) {
-    const pos = player.pos.x;
+function pieceRotate(dir) {
+    const pos = piece.pos.x;
     let offset = 1;
 
-    rotate(player.matrix, dir);
+    rotate(piece.matrix, dir);
 
-    while (collide(arena, player)) {
-        player.pos.x += offset;
+    while (collide(arena, piece)) {
+        piece.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
 
-        if (offset > player.matrix[0].length) {
-            rotate(player.matrix, -dir);
-            player.pos.x = pos;
+        if (offset > piece.matrix[0].length) {
+            rotate(piece.matrix, -dir);
+            piece.pos.x = pos;
             return;
         }
     }

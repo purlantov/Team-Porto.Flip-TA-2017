@@ -27,7 +27,7 @@ function update(time = 0) {
     dropCounter += deltaTime;
 
     // TO TEAM: Verify
-    // Increase dropCounter by a fixed amount of 16 every tick/window refresh    
+    // Increase dropCounter by a fixed amount of 16 every tick/window refresh
     // Remove code above and use this?
     // dropCounter += 16;
 
@@ -91,7 +91,7 @@ document.addEventListener('keydown', event => {
         pieceDrop();
     }
 
-    // Fast drop
+    //Fast drop
     else if (event.code === 'Space' && !gamePaused) {
         for (let i = 0; i < matrixHeight; i += 1) {
             if (piece.pos.y === 0) {
@@ -99,6 +99,7 @@ document.addEventListener('keydown', event => {
             }
             pieceDrop();
         }
+        event.preventDefault();
     }
 
     // Pause game
@@ -112,8 +113,16 @@ document.addEventListener('keydown', event => {
     }
 });
 
+$(window).keyup(function(e) {
+    if (e.keyCode === 0 || e.keyCode === 32) {
+        e.preventDefault();
+        console.log('(Space) Key Up was trigered!');
+    }
+});
+
 const buttonNew = document.getElementById('newGame');
 buttonNew.addEventListener("click", startNewGame);
+
 
 const buttonPause = document.getElementById('pause');
 buttonPause.addEventListener("click", pauseGame);

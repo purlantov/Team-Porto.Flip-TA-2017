@@ -71,4 +71,4 @@ buttonNew.addEventListener("click", startNewGame);
 const buttonPause = document.getElementById('pause');
 buttonPause.addEventListener("click", pauseGame);
 
-startNewGame();
+drawBlack();

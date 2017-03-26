@@ -1,11 +1,15 @@
 const blockSize = 35;
 
 function draw() {
-    context.fillStyle = '#000';
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    drawBlack();
 
     drawMatrix(arena, { x: 0, y: 0 });
     drawMatrix(piece.matrix, piece.pos);
+}
+
+function drawBlack() {
+    context.fillStyle = '#000';
+    context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function drawMatrix(matrix, offset) {

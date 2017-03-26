@@ -14,7 +14,7 @@ function updateScore() {
     if (currentPlayer.score === currentPlayer.scoreToLevelUp) {
         addedScore += 20;
         currentPlayer.scoreToLevelUp = currentPlayer.scoreToLevelUp * 2;
-        dropinteval = dropinteval - 10;
+        dropInterval = dropInterval - 10;
     }
 }
 

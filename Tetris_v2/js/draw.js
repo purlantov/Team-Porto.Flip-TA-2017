@@ -1,9 +1,13 @@
 const blockSize = 35;
+const darkerPercentage = -0.5;
 
 function draw() {
     drawBlack();
 
-    drawMatrix(arena, { x: 0, y: 0 });
+    drawMatrix(arena, {
+        x: 0,
+        y: 0
+    });
     drawMatrix(piece.matrix, piece.pos);
 }
 
@@ -12,26 +16,33 @@ function drawBlack() {
     context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+function shadeColor(color, percent) {
+    var f = parseInt(color.slice(1), 16),
+        t = percent < 0 ? 0 : 255,
+        p = percent < 0 ? percent * -1 : percent,
+        R = f >> 16,
+        G = f >> 8 & 0x00FF,
+        B = f & 0x0000FF,
+        r = Math.round((t - R) * p) + R,
+        g = Math.round((t - G) * p) + G,
+        b = Math.round((t - B) * p) + B,
+        result = '#' + (0x1000000 + (r * 0x10000) + (g * 0x100) + b).toString(16).slice(1);
+
+    return result;
+}
+
 function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                // context.fillStyle = 'blue';
-                // context.fillStyle = colors[value];
-                // context.fillRect(x + offset.x, y + offset.y, 1, 1);
-
-                //context.fillStyle = 'blue';
-
                 context.fillStyle = colors[value];
-                context.fillRect((x + offset.x) * blockSize, (y + offset.y) * blockSize, blockSize, blockSize);
-
-                var gradient = context.createLinearGradient(100, 100, 600, 600);
-                gradient.addColorStop("0", colors[value]);
-                gradient.addColorStop("0.5", "black");
-                gradient.addColorStop("1", colors[value]);
-                context.strokeStyle = gradient;
+                context.strokeStyle = shadeColor(colors[value], darkerPercentage);
                 context.lineWidth = 5;
-                context.strokeRect((x + offset.x) * blockSize, (y + offset.y) * blockSize, blockSize, blockSize);
+
+                let startPointX = (x + offset.x) * blockSize;
+                let startPointY = (y + offset.y) * blockSize;
+                context.fillRect(startPointX, startPointY, blockSize, blockSize);
+                context.strokeRect(startPointX, startPointY, blockSize, blockSize);
             }
         });
     });

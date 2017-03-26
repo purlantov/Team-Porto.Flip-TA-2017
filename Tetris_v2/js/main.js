@@ -33,6 +33,7 @@ function update(time = 0) {
     if (!gamePaused) {
         if (dropCounter > dropInterval) {
             pieceDrop(); // playerdrop.js
+            dropCounter = 0;
         }
 
         draw(); // draw.js

@@ -14,8 +14,6 @@ function pieceDrop() {
         getNewPiece();
         arenaSweep();
     }
-
-    dropCounter = 0;
 }
 
 
@@ -98,6 +96,5 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y += 1;
-        console.log(currentPlayer.score);
     }
 }

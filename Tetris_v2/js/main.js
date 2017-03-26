@@ -28,6 +28,26 @@ function update(time = 0) {
     }
 }
 
+function startNewGame() {
+    arena.forEach(row => row.fill(0));
+    gamePaused = false;
+    currentPlayer = new Player();
+    totalScore.innerText = 0;
+    getNewPiece();
+    update();
+}
+
+function pauseGame() {
+    if (!gamePaused) {
+        gamePaused = true;
+        drawPause();
+
+    } else if (gamePaused) {
+        gamePaused = false;
+        update();
+    }
+}
+
 document.addEventListener('keydown', event => {
     // Move left
     if (event.code === 'ArrowLeft') {

@@ -101,24 +101,3 @@ function arenaSweep() {
         console.log(currentPlayer.score);
     }
 }
-
-
-function pauseGame() {
-    if (!gamePaused) {
-        gamePaused = true;
-        drawPause();
-
-    } else if (gamePaused) {
-        gamePaused = false;
-        update();
-    }
-}
-
-function startNewGame() {
-    arena.forEach(row => row.fill(0));
-    gamePaused = false;
-    currentPlayer = new Player();
-    totalScore.innerText = 0;
-    getNewPiece();
-    update();
-}

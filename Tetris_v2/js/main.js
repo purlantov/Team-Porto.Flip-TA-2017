@@ -35,7 +35,7 @@ function update(time = 0) {
         if (dropCounter > dropInterval) {
             pieceDrop(); // playerdrop.js
             if (gameOver) {
-                drawGameOver();
+                drawGameOverMessage();
                 return;
             }
             dropCounter = 0;
@@ -59,7 +59,7 @@ function startNewGame() {
 function pauseGame() {
     if (!gamePaused && !gameOver) {
         gamePaused = true;
-        drawPause();
+        drawPauseMessage();
 
     } else if (gamePaused) {
         gamePaused = false;
@@ -116,3 +116,4 @@ const buttonPause = document.getElementById('pause');
 buttonPause.addEventListener("click", pauseGame);
 
 drawBlack();
+drawWelcomeMessage();

@@ -10,8 +10,8 @@ let lastTime = 0,
     dropCounter = 0,
     dropInterval = 150;
 
-let gamePaused = false;
-let gameOver = false;
+let gamePaused = true;
+let gameOver = true;
 
 
 function update(time = 0) {
@@ -57,7 +57,10 @@ function startNewGame() {
 }
 
 function pauseGame() {
-    if (!gamePaused && !gameOver) {
+    if (gameOver) {
+        return;
+    }
+    if (!gamePaused) {
         gamePaused = true;
         drawPauseMessage();
 

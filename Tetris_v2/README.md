@@ -10,15 +10,15 @@ JavaScript DOM & UI: Teamwork Assignment
 
 This document describes the teamwork assignment for Telerik Academy students in JavaScript UI & DOM course
 
-## Team members
-
-- Daniel Mitkov
-- Kristian Ekov
-- Nadezhda Hristova
-- Nadya Vassileva
-- Nikolay Stanchev
-- Pavel Purlantov
-- Sevdalin Zheliazkov
+| Team member         | Username     |
+| -------------       | :------:     |
+| Daniel Mitkov       | boda66       |
+| Kristian Ekov       | KristianEkov |
+| Nadezhda Hristova   | nhristova    |
+| Nadya Vassileva     | nadeto13     |
+| Nikolay Stanchev    | nikist96     |
+| Pavel Purlantov     | purlantov    |
+| Sevdalin Zheliazkov | irrealizable |
 
 ##   Project Description
 

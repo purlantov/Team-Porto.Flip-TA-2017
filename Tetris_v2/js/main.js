@@ -3,7 +3,7 @@ canvas.width = '420';
 canvas.height = '700';
 const context = canvas.getContext('2d');
 
-const k = 35;
+
 //context.scale(35, 35);
 
 let lastTime = 0,
@@ -51,8 +51,7 @@ document.addEventListener('keydown', event => {
 
     // Fast drop
     else if (event.code === 'Space' && !gamePaused) {
-        // What is 20?
-        for (let i = 0; i < 20; i += 1) {
+        for (let i = 0; i < matrixHeight; i += 1) {
             if (piece.pos.y === 0) {
                 break;
             }
@@ -72,4 +71,4 @@ buttonNew.addEventListener("click", startNewGame);
 const buttonPause = document.getElementById('pause');
 buttonPause.addEventListener("click", pauseGame);
 
-update();
+startNewGame();

@@ -1,3 +1,5 @@
+const blockSize = 35;
+
 function draw() {
     context.fillStyle = '#000';
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -17,7 +19,7 @@ function drawMatrix(matrix, offset) {
                 //context.fillStyle = 'blue';
 
                 context.fillStyle = colors[value];
-                context.fillRect((x + offset.x) * k, (y + offset.y) * k, k, k);
+                context.fillRect((x + offset.x) * blockSize, (y + offset.y) * blockSize, blockSize, blockSize);
 
                 var gradient = context.createLinearGradient(100, 100, 600, 600);
                 gradient.addColorStop("0", colors[value]);
@@ -25,7 +27,7 @@ function drawMatrix(matrix, offset) {
                 gradient.addColorStop("1", colors[value]);
                 context.strokeStyle = gradient;
                 context.lineWidth = 5;
-                context.strokeRect((x + offset.x) * k, (y + offset.y) * k, k, k);
+                context.strokeRect((x + offset.x) * blockSize, (y + offset.y) * blockSize, blockSize, blockSize);
             }
         });
     });

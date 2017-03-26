@@ -34,20 +34,23 @@ function createMatrix(width, height) {
 }
 
 function collide(arena, piece) {
-    const [m, o] = [piece.matrix, piece.pos];
-    for (let y = 0; y < m.length; y += 1) {
-        for (let x = 0; x < m[y].length; x += 1) {
+    //Destructuring confusing
+    //const [m, o] = [piece.matrix, piece.pos];
+    for (let row = 0; row < piece.matrix.length; row += 1) {
+        for (let col = 0; col < piece.matrix[row].length; col += 1) {
 
-            if (m[y][x] !== 0 //if piece y-row x-colum !==0  
-                &&
-                (arena[y + o.y] // arena-row exist (is not 0) 
-                    &&
-                    arena[y + o.y][x + o.x]) !== 0) {
-                return true; //collision true
+            // Disregard piece matrix zero values
+            if (piece.matrix[row][col] !== 0 &&
+                // Check if arena-row exists
+                (arena[row + piece.pos.y] &&
+                    // Check if arena col next to piece position on this row is filled
+                    arena[row + piece.pos.y][col + piece.pos.x]) !== 0) {
+                // There is a collision
+                return true;
             }
         }
     }
-    return false; // no collision
+    return false;
 }
 
 function merge(arena, piece) {

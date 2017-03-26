@@ -25,15 +25,17 @@ This document describes the teamwork assignment for Telerik Academy students in 
 The project is the classic **Tetris game**
 
 Live preview of application:
-[Tetris_v2 (RawGit)](https://rawgit.com/purlantov/Team-Porto.Flip-TA-2017/master/Tetris_v2/index.html")
+[Tetris_v2 (RawGit)](https://rawgit.com/purlantov/Team-Porto.Flip-TA-2017/master/Tetris_v2/index.html)
 
-*Functionalities:* New game, piece rotation, piece vertical movement, checks for collisions, clearing of filled rows, preview next piece, score counter,  pause, game over
+*Game controls:* Button New game (F2), button Pause (Esc); arrow keys shift piece left or right, rotate or speed up fall; Space bar lands the piece to the bottom.
 
-*Styling:* pieces have a retro look gradient borders overlay and basic colors
+*Functionalities:* New game, piece rotation, piece vertical movement, checks for collisions, clearing of filled rows, preview next piece, score counter,  pause, game over.
+
+*Styling:* The game pieces have a retro look with gradient borders overlay and basic colors.
 
 ##  General Requirements
 
-Used:
+DONE:
 - **HTML5 canvas**
 - Animations: implemented in movement and rotation of pieces
 - Tested on browsers:
@@ -55,12 +57,12 @@ Followed best practices for high-quality code:
 -   Teamwork tool used - Slack
 
 TO REVIEW:
--   **Data encapsulation** -   Use if modules
+-   **Data encapsulation** -   Use of modules
 -   **Strong cohesion** and **loose coupling**
 
 ##  Optional Requirements
 
--   DOM manipulations (native DOM API): implemented in display of next piece
+-   DOM manipulations (native DOM API): implemented in display of next piece and game control buttons
 
 TO DO:
 -   Unit and integration testing
@@ -80,7 +82,7 @@ TO DO:
 
 ##  Public Project Defense
 
-TO TEST RUN (10 minutes max):
+TO DO: TEST RUN (10 minutes max):
   -   Demonstrate the application (very shortly)
   -   Show the source code
   -   Show the commits logs to confirm that team member have contributed.

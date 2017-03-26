@@ -18,11 +18,6 @@ function pieceDrop() {
     dropCounter = 0;
 }
 
-function Player() {
-    this.score = 0;
-    this.level = 1;
-    this.scoreToLevelUp = 20;
-}
 
 // Declared constants because matrix height is needed for spacebar drop
 const matrixWidth = 12;
@@ -107,19 +102,6 @@ function arenaSweep() {
     }
 }
 
-let totalScore = document.getElementById('totalScore');
-let currentPlayer = new Player();
-let addedScore = 10;
-
-function updateScore() {
-    currentPlayer.score += addedScore;
-    totalScore.innerText = currentPlayer.score;
-    if (currentPlayer.score === currentPlayer.scoreToLevelUp) {
-        addedScore += 20;
-        currentPlayer.scoreToLevelUp = currentPlayer.scoreToLevelUp * 2;
-        dropinteval = dropinteval - 10;
-    }
-}
 
 function pauseGame() {
     if (!gamePaused) {

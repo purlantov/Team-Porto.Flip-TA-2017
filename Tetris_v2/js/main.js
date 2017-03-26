@@ -113,10 +113,11 @@ document.addEventListener('keydown', event => {
     }
 });
 
+// Prevent SpaceBar to repeat last clicked event
 $(window).keyup(function(e) {
     if (e.keyCode === 0 || e.keyCode === 32) {
         e.preventDefault();
-        console.log('(Space) Key Up was trigered!');
+        //console.log('(Space) Key Up was trigered!');
     }
 });
 

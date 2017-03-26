@@ -24,7 +24,10 @@ function Player() {
     this.scoreToLevelUp = 20;
 }
 
-const arena = createMatrix(12, 20);
+// Declared constants because matrix height is needed for spacebar drop
+const matrixWidth = 12;
+const matrixHeight = 20;
+const arena = createMatrix(matrixWidth, matrixHeight);
 
 function createMatrix(width, height) {
     const matrix = [];
@@ -133,6 +136,7 @@ function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     currentPlayer = new Player();
+    totalScore.innerText = 0;
     getNewPiece();
     update();
 }

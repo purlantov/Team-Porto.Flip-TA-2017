@@ -33,7 +33,7 @@ Live preview of application:
 
 *Styling:* The game pieces have a retro look with gradient borders overlay and basic colors.
 
-##  General Requirements
+##  General
 
 DONE:
 - **HTML5 canvas**
@@ -47,7 +47,7 @@ TO TEST & FIX:
 - Opera
 - Safari
 
-##  Additional Requirements
+##  Additional
 
 Followed best practices for high-quality code:
 
@@ -60,7 +60,7 @@ TO REVIEW:
 -   **Data encapsulation** -   Use of modules
 -   **Strong cohesion** and **loose coupling**
 
-##  Optional Requirements
+##  Optional
 
 -   DOM manipulations (native DOM API): implemented in display of next piece and game control buttons
 

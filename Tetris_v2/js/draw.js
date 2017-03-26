@@ -50,9 +50,9 @@ function drawMatrix(matrix, offset) {
 
 function drawWelcomeMessage() {
     messageStyle();
-    context.fillText("WELCOME!", canvas.width / 3.8, 320);
+    context.fillText("WELCOME!", canvas.width / 3.3, 320);
     context.font = "20pt Calibri";
-    context.fillText("(press F2 to start)", canvas.width / 4.5, 360);
+    context.fillText("(press F2 to start)", canvas.width / 3.7, 360);
 }
 
 

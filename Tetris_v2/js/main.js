@@ -121,12 +121,22 @@ $(window).keyup(function(e) {
     }
 });
 
-const buttonNew = document.getElementById('newGame');
-buttonNew.addEventListener("click", startNewGame);
+const gameControls = document.getElementsByClassName('game-controls')[0];
+const btnNew = document.getElementById('newGame');
+const btnPause = document.getElementById('pause');
+const btnHelp = document.getElementById('help');
+const instructions = document.getElementById('instructions');
 
+gameControls.addEventListener('click', function(ev) {
+    if (ev.target == btnNew) {
+        startNewGame();
+    } else if (ev.target == btnPause) {
+        pauseGame();
+    } else if (ev.target == btnHelp) {
+        instructions.classList.toggle('active');
+    }
+}, false);
 
-const buttonPause = document.getElementById('pause');
-buttonPause.addEventListener("click", pauseGame);
 
 drawBlack();
 drawWelcomeMessage();

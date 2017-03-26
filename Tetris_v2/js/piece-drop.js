@@ -80,12 +80,12 @@ function getNewPiece() {
     // TO DO extract to a separate method or simplify
     piece.matrix = createPiece(randomize);
     let image = document.getElementById(randomize);
-    image.className = "active";
+    image.style.display = 'block';
     randomize = pieces[pieces.length * Math.random() | 0];
-    image.className = "";
+    image.style.display = 'none';
     image = document.getElementById(randomize);
 
-    image.className = "active";
+    image.style.display = 'block';
 
     // Pieces start from outside of the matrix
     //piece.pos.y = 0;

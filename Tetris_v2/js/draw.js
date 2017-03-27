@@ -57,7 +57,6 @@ var draw = (function() {
         context.fillText("(press F2 to start)", canvas.width / 3.7, 360);
     }
 
-
     function drawPauseMessage() {
         messageStyle();
         context.fillText("GAME PAUSED", canvas.width / 4, 320);
@@ -73,7 +72,6 @@ var draw = (function() {
     function messageStyle() {
         context.fillStyle = "rgba(144, 144, 144, 0.2)";
         context.fillRect(0, 250, canvas.width, 150);
-
         context.font = "26pt Calibri";
         context.fillStyle = "#FFF";
     }
@@ -85,7 +83,6 @@ var draw = (function() {
         drawMatrix: drawMatrix,
         drawWelcomeMessage: drawWelcomeMessage,
         drawPauseMessage: drawPauseMessage,
-        drawGameOverMessage: drawGameOverMessage,
-        messageStyle: messageStyle
+        drawGameOverMessage: drawGameOverMessage
     };
 })();

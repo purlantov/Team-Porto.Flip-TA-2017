@@ -3,16 +3,15 @@ const context = canvas.getContext('2d');
 canvas.width = '420';
 canvas.height = '700';
 
-
 //context.scale(35, 35);
 
 let lastTime = 0,
     dropCounter = 0,
-    dropInterval = 150;
+    dropInterval = 150,
+    gamePaused = true,
+    gameOver = true;
 
-let gamePaused = true;
-let gameOver = true;
-
+const bestScoreHolder = document.getElementById('bestScore');
 
 function update(time = 0) {
     // Counts time interval, based on window refresh rate.
@@ -36,6 +35,7 @@ function update(time = 0) {
             pieceDrop(); // player-drop.js
             if (gameOver) {
                 draw.drawGameOverMessage();
+                getBestScore(currentPlayer.score);
                 return;
             }
             dropCounter = 0;
@@ -50,9 +50,11 @@ function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
-    currentPlayer = new Player();
+    
     totalScore.innerText = 0;
+    getBestScore(currentPlayer.score);
 
+    currentPlayer = new Player();
     getNewPiece();
     update();
 }
@@ -69,6 +71,16 @@ function pauseGame() {
         gamePaused = false;
         update();
     }
+}
+
+function getBestScore (score) {
+    let bestScore = 0;
+
+    if (score > bestScore) {
+        bestScore = score;
+    }
+
+    bestScoreHolder.innerHTML = bestScore;
 }
 
 document.addEventListener('keydown', event => {

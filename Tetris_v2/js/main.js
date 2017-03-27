@@ -11,8 +11,6 @@ let lastTime = 0,
     gamePaused = true,
     gameOver = true;
 
-const bestScoreHolder = document.getElementById('bestScore');
-
 function update(time = 0) {
     // Counts time interval, based on window refresh rate.
     // Increases dropCounter with diff between current time and last time refresh was called
@@ -50,7 +48,8 @@ function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
-    
+
+    totalScore.className = '';
     totalScore.innerText = 0;
     getBestScore(currentPlayer.score);
 
@@ -71,16 +70,6 @@ function pauseGame() {
         gamePaused = false;
         update();
     }
-}
-
-function getBestScore (score) {
-    let bestScore = 0;
-
-    if (score > bestScore) {
-        bestScore = score;
-    }
-
-    bestScoreHolder.innerHTML = bestScore;
 }
 
 document.addEventListener('keydown', event => {

@@ -56,6 +56,14 @@ p {
     margin: 0.5em 0;
 }
 
+.green {
+    color: #06dd06;
+}
+
+.red {
+    color: #dd0606;
+}
+
 .wrap {
     max-width: 640px;
     margin: 0 auto;

@@ -33,15 +33,15 @@ function update(time = 0) {
 
     if (!gamePaused) {
         if (dropCounter > dropInterval) {
-            pieceDrop(); // playerdrop.js
+            pieceDrop(); // player-drop.js
             if (gameOver) {
-                drawGameOverMessage();
+                draw.drawGameOverMessage();
                 return;
             }
             dropCounter = 0;
         }
 
-        draw(); // draw.js
+        draw.draw(); // draw.js
         requestAnimationFrame(update);
     }
 }
@@ -52,6 +52,7 @@ function startNewGame() {
     gameOver = false;
     currentPlayer = new Player();
     totalScore.innerText = 0;
+
     getNewPiece();
     update();
 }
@@ -62,7 +63,7 @@ function pauseGame() {
     }
     if (!gamePaused) {
         gamePaused = true;
-        drawPauseMessage();
+        draw.drawPauseMessage();
 
     } else if (gamePaused) {
         gamePaused = false;
@@ -138,5 +139,5 @@ gameControls.addEventListener('click', function(ev) {
 }, false);
 
 
-drawBlack();
-drawWelcomeMessage();
+draw.drawBlack();
+draw.drawWelcomeMessage();

@@ -48,6 +48,7 @@ function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
+    dropInterval = 150;
 
     totalScore.className = '';
     totalScore.innerText = 0;

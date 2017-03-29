@@ -27,9 +27,9 @@ The project is the classic **Tetris game**
 Live preview of application:
 [Tetris_v2 (RawGit)](https://rawgit.com/purlantov/Team-Porto.Flip-TA-2017/master/Tetris_v2/index.html)
 
-*Game controls:* Button New game (F2), button Pause (Esc); arrow keys shift piece left or right, rotate or speed up fall; Space bar lands the piece to the bottom.
+*Game controls:* Button New game (F2), button Pause (Esc); arrow keys shift piece left or right, rotate or speed up fall; Space bar lands the piece to the bottom. Page buttons - ? for how to play and ♫ for muting sound.
 
-*Functionalities:* New game, piece rotation, piece vertical movement, checks for collisions, clearing of filled rows, preview next piece, score counter,  pause, game over.
+*Functionalities:* New game, piece rotation, piece horizontal and vertical movement, checks for collisions, clearing of filled rows, preview next piece, change game speed levels, count score, save best score,  pause, game over.
 
 *Styling:* The game pieces have a retro look with gradient borders overlay and basic colors.
 
@@ -38,14 +38,13 @@ Live preview of application:
 DONE:
 - **HTML5 canvas**
 - Animations: implemented in movement and rotation of pieces
-- Tested on browsers:
+- Tested on browsers (latest versions):
     - Google Chrome
-
-TO TEST & FIX:
-- IExplorer 11 - canvas size buggy, buttons don't wokr
-- Firefox
-- Opera
-- Safari
+    - Firefox
+- OTHER BROWSERS TO TEST ON:
+    - IExplorer 11 - canvas size buggy, buttons don't work
+    - Opera
+    - Safari
 
 ##  Additional
 
@@ -56,7 +55,7 @@ Followed best practices for high-quality code:
 -   **GIT** as source control system [Team-Porto.Filip-TA-2017](https://github.com/purlantov/Team-Porto.Flip-TA-2017)
 -   Teamwork tool used - Slack
 
-TO REVIEW:
+AREAS FOR IMPROVEMENT:
 -   **Data encapsulation** -   Use of modules
 -   **Strong cohesion** and **loose coupling**
 

@@ -12,7 +12,6 @@ function pieceDrop() {
             arenaSweep();
         }
     }
-    draw.draw();
 }
 
 function pieceFastDrop(params) {
@@ -25,7 +24,6 @@ function pieceFastDrop(params) {
     pieceFastDrop();
 }
 
-// W & H needed for spacebar drop and piece creation
 const matrixWidth = 12;
 const matrixHeight = 20;
 const arena = createArenaMatrix(matrixWidth, matrixHeight);
@@ -42,8 +40,6 @@ function createArenaMatrix(width, height) {
 }
 
 function collide(arena, piece) {
-    //Destructuring confusing
-    //const [m, o] = [piece.matrix, piece.pos];
     for (let row = 0; row < piece.matrix.length; row += 1) {
         for (let col = 0; col < piece.matrix[row].length; col += 1) {
             // Skip if the piece is still outside the matrix
@@ -67,7 +63,6 @@ function collide(arena, piece) {
 function merge(arena, piece) {
     piece.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
-            // Check if this always works correctly
             if (value !== 0) {
                 arena[y + piece.pos.y][x + piece.pos.x] = value;
             }
@@ -79,7 +74,6 @@ function merge(arena, piece) {
 let newType = getRandomLetter();
 let piece;
 
-// Gets new piece
 function getNewPiece() {
     let nextType, currentImage, nextImage;
 

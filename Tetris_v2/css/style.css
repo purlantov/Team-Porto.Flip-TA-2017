@@ -110,10 +110,6 @@ section {
     padding: 0 0 10px;
 }
 
-#game-controls {
-    max-width: 300px;
-}
-
 #game-controls button {
     margin-right: 6px;
     margin-bottom: 6px;

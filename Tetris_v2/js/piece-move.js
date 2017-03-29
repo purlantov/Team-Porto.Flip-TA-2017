@@ -3,7 +3,6 @@ function pieceMove(dir) {
     if (collide(arena, piece)) {
         piece.pos.x -= dir;
     }
-    moveSound.play();
 }
 
 function rotate(matrix, dir) {
@@ -13,9 +12,9 @@ function rotate(matrix, dir) {
                 matrix[x][y],
                 matrix[y][x]
             ] = [
-                    matrix[y][x],
-                    matrix[x][y]
-                ];
+                matrix[y][x],
+                matrix[x][y]
+            ];
         }
     }
     if (dir > 0) {
@@ -26,7 +25,7 @@ function rotate(matrix, dir) {
 }
 
 function pieceRotate(dir) {
-   
+
     const pos = piece.pos.x;
     let offset = 1;
 
@@ -42,5 +41,4 @@ function pieceRotate(dir) {
             return;
         }
     }
-     moveSound.play();
 }

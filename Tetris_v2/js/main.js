@@ -17,9 +17,6 @@ function update(time = 0) {
     // deltaTime is usually around 16ms
     // the piece moves down when dropInterval exceeded
     const deltaTime = time - lastTime;
-    // console.log('time ' + time);
-    // console.log('last time ' + lastTime);
-    // console.log('delta time ' + deltaTime);
     lastTime = time;
     dropCounter += deltaTime;
 
@@ -81,28 +78,31 @@ document.addEventListener('keydown', event => {
     // Move left
     if (event.code === 'ArrowLeft') {
         pieceMove(-1);
+        moveSound.play();
     }
 
     // Move right
     else if (event.code === 'ArrowRight') {
         pieceMove(1);
+        moveSound.play();
     }
 
     // Rotate right
     else if (event.code === 'ArrowUp') {
         pieceRotate(1);
+        moveSound.play();
     }
 
     // Move down faster
     else if (event.code === 'ArrowDown') {
-        moveSound.play();
         pieceDrop();
+        moveSound.play();
     }
 
     //Fast drop
     else if (event.code === 'Space' && !gamePaused) {
-        lineDropSound.play();
         pieceFastDrop();
+        lineDropSound.play();
     }
 
     // Pause game

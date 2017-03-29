@@ -3,7 +3,6 @@ const context = canvas.getContext('2d');
 canvas.width = '420';
 canvas.height = '700';
 
-//context.scale(35, 35);
 const START_SPEED = 700;
 
 let lastTime = 0,
@@ -11,7 +10,6 @@ let lastTime = 0,
     gamePaused = true,
     gameOver = true,
     dropInterval = START_SPEED;
-;
 
 function update(time = 0) {
     // Counts time interval, based on window refresh rate.
@@ -32,7 +30,7 @@ function update(time = 0) {
 
     if (!gamePaused) {
         if (dropCounter > dropInterval) {
-            pieceDrop(); // player-drop.js
+            pieceDrop();
             if (gameOver) {
                 draw.drawGameOverMessage();
                 getBestScore(currentPlayer.score);
@@ -41,7 +39,7 @@ function update(time = 0) {
             dropCounter = 0;
         }
 
-        draw.draw(); // draw.js
+        draw.draw();
         requestAnimationFrame(update);
     }
 }
@@ -79,7 +77,7 @@ function pauseGame() {
 document.addEventListener('keydown', event => {
     // Move left
     if (event.code === 'ArrowLeft') {
-        pieceMove(-1); // playermove.js
+        pieceMove(-1);
     }
 
     // Move right
@@ -123,7 +121,6 @@ document.addEventListener('keydown', event => {
 $(window).keyup(function(e) {
     if (e.keyCode === 0 || e.keyCode === 32) {
         e.preventDefault();
-        //console.log('(Space) Key Up was trigered!');
     }
 });
 

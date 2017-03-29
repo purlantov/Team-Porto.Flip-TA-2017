@@ -114,9 +114,11 @@ function arenaSweep() {
         arena.unshift(row);
         y += 1;
         fullRows +=1;
+        lineRemoveSound.play();
     }
 
     if (fullRows > 0) {
         updateScore(fullRows);
     }
+    
 }

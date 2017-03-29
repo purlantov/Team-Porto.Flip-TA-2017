@@ -1,4 +1,4 @@
-var draw = (function() {
+var draw = (function () {
 
     const blockSize = 35;
     const darkerPercentage = -0.5;
@@ -65,6 +65,7 @@ var draw = (function() {
     }
 
     function drawGameOverMessage() {
+        gameOverSound.play();
         messageStyle();
         context.fillText("GAME OVER", canvas.width / 3.5, 340);
     }

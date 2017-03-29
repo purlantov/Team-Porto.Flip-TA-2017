@@ -134,7 +134,7 @@ gameControls.addEventListener('click', function(ev) {
     } else if (ev.target == btnHelp) {
         btnHelp.blur();
         instructions.classList.toggle('active');
-    } else if (ev.target == btnMute) {
+    } else if (ev.target == btnMute || ev.target.parentElement === btnMute) {
         btnMute.blur();
         [].forEach.call(audios, function(audio) { muteAll(audio); })
     }

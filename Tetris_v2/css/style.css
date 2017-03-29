@@ -142,9 +142,13 @@ button#pause:hover {
     background: #7a5746;
 }
 
-button#help,
+button#help {
+    padding: 4px 14px;
+    background: #777;
+}
+
 button#mute {
-    margin-right: 0;
+    padding: 4px 10px;
     background: #777;
 }
 

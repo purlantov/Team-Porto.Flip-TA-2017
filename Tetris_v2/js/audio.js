@@ -18,7 +18,9 @@ audioBox.appendChild(lineRemoveSound);
 function muteAll(element) {
     if (!element.muted) {
         element.muted = true;
+        btnMute.innerHTML = '<img src="images/soundOff.svg">'
     } else {
         element.muted = false;
+        btnMute.innerHTML = '<img src="images/soundOn.svg">';
     }
 }

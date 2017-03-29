@@ -45,6 +45,7 @@ function update(time = 0) {
 }
 
 function startNewGame() {
+    startSound.play();
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
@@ -61,6 +62,7 @@ function startNewGame() {
 }
 
 function pauseGame() {
+    pauseSound.play();
     if (gameOver) {
         return;
     }
@@ -92,6 +94,7 @@ document.addEventListener('keydown', event => {
 
     // Move down faster
     else if (event.code === 'ArrowDown') {
+        moveSound.play();
         pieceDrop();
     }
 
@@ -103,6 +106,7 @@ document.addEventListener('keydown', event => {
             }
             pieceDrop();
         }
+        lineDropSound.play();
         event.preventDefault();
     }
 
@@ -118,7 +122,7 @@ document.addEventListener('keydown', event => {
 });
 
 // Prevent SpaceBar to repeat last clicked event
-$(window).keyup(function(e) {
+$(window).keyup(function (e) {
     if (e.keyCode === 0 || e.keyCode === 32) {
         e.preventDefault();
     }
@@ -130,7 +134,7 @@ const btnPause = document.getElementById('pause');
 const btnHelp = document.getElementById('help');
 const instructions = document.getElementById('instructions');
 
-gameControls.addEventListener('click', function(ev) {
+gameControls.addEventListener('click', function (ev) {
     if (ev.target == btnNew) {
         startNewGame();
     } else if (ev.target == btnPause) {

@@ -110,8 +110,13 @@ section {
     padding: 0 0 10px;
 }
 
+#game-controls {
+    max-width: 300px;
+}
+
 #game-controls button {
     margin-right: 6px;
+    margin-bottom: 6px;
     padding: 4px 16px;
     font-family: 'Ubuntu', Verdana, sans-serif;
     font-size: 1.5em;
@@ -141,12 +146,14 @@ button#pause:hover {
     background: #7a5746;
 }
 
-button#help {
+button#help,
+button#mute {
     margin-right: 0;
     background: #777;
 }
 
-button#help:hover {
+button#help:hover,
+button#mute:hover {
     background: #555;
 }
 

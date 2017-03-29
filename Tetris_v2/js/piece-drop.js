@@ -70,26 +70,6 @@ function merge(arena, piece) {
     });
 }
 
-// Type of the first piece
-let newType = getRandomLetter();
-let piece;
-
-function getNewPiece() {
-    let nextType, currentImage, nextImage;
-
-    piece = new Piece(newType);
-    currentImage = document.getElementById(newType);
-    currentImage.style.display = 'none';
-
-    nextType = getRandomLetter();
-    nextImage = document.getElementById(nextType);
-    nextImage.style.display = 'block';
-
-    newType = nextType;
-
-    gameOver = collide(arena, piece);
-}
-
 function arenaSweep() {
     let fullRows = 0;
     outer: for (let y = arena.length - 1; y > 0; y -= 1) {

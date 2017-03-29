@@ -2,11 +2,9 @@ TelerikAcademy Season 8 (2016-2017)
 
 JavaScript DOM & UI: Teamwork Assignment
 
-## Team "Porto Flip"
-
 # TETRIS
 
-This document describes the teamwork assignment for Telerik Academy students in JavaScript UI & DOM course
+## Team "Porto Flip"
 
 | Team member         | Username     |
 | -------------       | :------:     |
@@ -49,9 +47,9 @@ Preview of application:
 
 Followed best practices for high-quality code:
 
--   **Correct naming**
+-   Correct naming
 -   ES 2015 syntax where possible
--   **GIT** as source control system [Team-Porto.Filip-TA-2017](https://github.com/purlantov/Team-Porto.Flip-TA-2017)
+-   GIT as source control system [Team-Porto.Filip-TA-2017](https://github.com/purlantov/Team-Porto.Flip-TA-2017/tree/master/Tetris_v2)
 -   Teamwork tool used - Slack
 
 Areas for improvement:

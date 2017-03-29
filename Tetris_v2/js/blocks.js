@@ -39,10 +39,10 @@ function createPieceMatrix(type) {
         ];
     } else if (type === 'I') {
         return [
-            [0, 5, 0, 0],
-            [0, 5, 0, 0],
-            [0, 5, 0, 0],
-            [0, 5, 0, 0]
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [5, 5, 5, 5],
+            [0, 0, 0, 0]
         ];
     } else if (type === 'S') {
         return [

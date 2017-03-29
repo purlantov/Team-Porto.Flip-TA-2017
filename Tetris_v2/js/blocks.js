@@ -16,9 +16,9 @@ function Piece(type) {
 function createPieceMatrix(type) {
     if (type === 'T') {
         return [
-            [0, 0, 0],
+            [0, 1, 0],
             [1, 1, 1],
-            [0, 1, 0]
+            [0, 0, 0]
         ];
     } else if (type === 'O') {
         return [
@@ -27,15 +27,15 @@ function createPieceMatrix(type) {
         ];
     } else if (type === 'L') {
         return [
-            [0, 3, 0],
-            [0, 3, 0],
-            [0, 3, 3]
+            [0, 0, 3],
+            [3, 3, 3],
+            [0, 0, 0]
         ];
     } else if (type === 'J') {
         return [
-            [0, 4, 0],
-            [0, 4, 0],
-            [4, 4, 0]
+            [4, 0, 0],
+            [4, 4, 4],
+            [0, 0, 0]
         ];
     } else if (type === 'I') {
         return [

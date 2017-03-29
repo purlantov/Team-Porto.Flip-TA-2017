@@ -11,39 +11,37 @@
 </head>
 
 <body>
-    <div class="wrap">
+    <div id="wrap">
         <header>
             <img src="images/logo.jpg" alt="Tetris" />
         </header>
 
-        <div class="container">
+        <div id="container">
 
-            <div class="game-window">
+            <main id="game-window">
                 <canvas id="tetris"></canvas>
-            </div>
+            </main>
 
             <aside>
-                <section id="Score">
-                    <div class="nextBlock">
-                        <div class="nextBlock__img">
-                            <img src="images/I.png" id="I">
-                            <img src="images/J.png" id="J">
-                            <img src="images/L.png" id="L">
-                            <img src="images/O.png" id="O">
-                            <img src="images/S.png" id="S">
-                            <img src="images/T.png" id="T">
-                            <img src="images/Z.png" id="Z">
-                        </div>
+                <section id="info">
+                    <div id="nextBlock">
+                        <img src="images/I.png" id="I">
+                        <img src="images/J.png" id="J">
+                        <img src="images/L.png" id="L">
+                        <img src="images/O.png" id="O">
+                        <img src="images/S.png" id="S">
+                        <img src="images/T.png" id="T">
+                        <img src="images/Z.png" id="Z">
                     </div>
 
-                    <div class="score">
+                    <div id="score">
                         <h2>Score: <span id="totalScore">0</span></h2>
                         <h2>Level: <span id="currentLevel">1</span></h2>
                         <h2>Best: <span id="bestScore">0</span></h2>
                     </div>
                 </section>
 
-                <section class="game-controls">
+                <section id="game-controls">
                     <button id="newGame" type="start">New game</button>
                     <button id="pause" type="start">Pause</button>
                     <button id="help" type="start">?</button>
@@ -59,7 +57,7 @@
                 </section>
 
                 <footer>
-                    <p>Created by : <a href="https://github.com/purlantov/Team-Porto.Flip-TA-2017" target="_blank">Team Porto Filip</a></p>
+                    <p>Created by : <a href="https://github.com/purlantov/Team-Porto.Flip-TA-2017" target="_blank">Team Porto Flip</a></p>
                     <p>Telerik Academy Season 8 (2016-2017)</p>
                 </footer>
             </aside>

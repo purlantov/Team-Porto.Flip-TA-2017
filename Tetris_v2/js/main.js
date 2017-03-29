@@ -124,7 +124,7 @@ $(window).keyup(function(e) {
     }
 });
 
-const gameControls = document.getElementsByClassName('game-controls')[0];
+const gameControls = document.getElementById('game-controls');
 const btnNew = document.getElementById('newGame');
 const btnPause = document.getElementById('pause');
 const btnHelp = document.getElementById('help');

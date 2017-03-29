@@ -1,6 +1,6 @@
-TelerikAcademy Season 8 (2016-2017)
+Telerik Academy Season 8 (2016-2017)
 
-JavaScript DOM & UI: Teamwork Assignment
+JavaScript DOM & UI Teamwork Project
 
 # TETRIS
 
@@ -20,7 +20,7 @@ JavaScript DOM & UI: Teamwork Assignment
 
 The project is the classic **Tetris** game
 
-Preview of application:
+**Preview of application:**
 
 [Live preview (RawGit)](https://rawgit.com/purlantov/Team-Porto.Flip-TA-2017/master/Tetris_v2/index.html)
 

@@ -1,4 +1,19 @@
-function createPiece(type) {
+const pieces = 'ILJOTSZ';
+
+function getRandomLetter() {
+    return pieces[(Math.random() * pieces.length) | 0];
+}
+
+// Random x position can be improved to reflect piece width
+function Piece(type) {
+    this.matrix = createPieceMatrix(type);
+    this.pos = {
+        x: (matrixWidth - 3) * Math.random() | 0,
+        y: -this.matrix.length
+    };
+}
+
+function createPieceMatrix(type) {
     if (type === 'T') {
         return [
             [0, 0, 0],

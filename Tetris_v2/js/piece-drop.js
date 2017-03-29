@@ -1,11 +1,3 @@
-const pieces = 'ILJOTSZ';
-
-const piece = {
-    pos: { x: 5, y: 0 },
-    // TO DO: Random initial piece
-    matrix: createPiece('T'), // blocks.js
-};
-
 function pieceDrop() {
     piece.pos.y += 1;
     if (collide(arena, piece)) {
@@ -22,13 +14,12 @@ function pieceDrop() {
     }
 }
 
-
-// Declared constants because matrix height is needed for spacebar drop
+// W & H needed for spacebar drop and piece creation
 const matrixWidth = 12;
 const matrixHeight = 20;
-const arena = createMatrix(matrixWidth, matrixHeight);
+const arena = createArenaMatrix(matrixWidth, matrixHeight);
 
-function createMatrix(width, height) {
+function createArenaMatrix(width, height) {
     const matrix = [];
 
     while (height > 0) {
@@ -73,33 +64,25 @@ function merge(arena, piece) {
     });
 }
 
-let randomize = pieces[(Math.random() * pieces.length) | 0];
+// Type of the first piece
+let newType = getRandomLetter();
+let piece;
 
 // Gets new piece
 function getNewPiece() {
-    // TO DO extract to a separate method or simplify
-    piece.matrix = createPiece(randomize);
-    let image = document.getElementById(randomize);
-    image.style.display = 'block';
-    randomize = pieces[pieces.length * Math.random() | 0];
-    image.style.display = 'none';
-    image = document.getElementById(randomize);
+    let nextType, currentImage, nextImage;
 
-    image.style.display = 'block';
+    piece = new Piece(newType);
+    currentImage = document.getElementById(newType);
+    currentImage.style.display = 'none';
 
-    // Pieces start from outside of the matrix
-    //piece.pos.y = 0;
-    piece.pos.y = -piece.matrix.length;
+    nextType = getRandomLetter();
+    nextImage = document.getElementById(nextType);
+    nextImage.style.display = 'block';
 
-    // TO DO: Random initial pos.x
-    piece.pos.x = (arena[0].length / 2 | 0) - (piece.matrix[0].length / 2 | 0);
+    newType = nextType;
 
-    let gameOver = collide(arena, piece);
-    if (gameOver) {
-        // To do: fix game over message appears only on arrow down
-        // gamePaused = true;
-        // drawGameOver();
-    }
+    gameOver = collide(arena, piece);
 }
 
 function arenaSweep() {
@@ -113,12 +96,12 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y += 1;
-        fullRows +=1;
+        fullRows += 1;
         lineRemoveSound.play();
     }
 
     if (fullRows > 0) {
         updateScore(fullRows);
     }
-    
+
 }

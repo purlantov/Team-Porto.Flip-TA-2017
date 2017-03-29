@@ -12,6 +12,17 @@ function pieceDrop() {
             arenaSweep();
         }
     }
+    draw.draw();
+}
+
+function pieceFastDrop(params) {
+    piece.pos.y += 1;
+    if (collide(arena, piece)) {
+        piece.pos.y -= 1;
+        pieceDrop();
+        return;
+    }
+    pieceFastDrop();
 }
 
 // W & H needed for spacebar drop and piece creation

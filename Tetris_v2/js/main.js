@@ -100,14 +100,8 @@ document.addEventListener('keydown', event => {
 
     //Fast drop
     else if (event.code === 'Space' && !gamePaused) {
-        for (let i = 0; i < matrixHeight; i += 1) {
-            if (piece.pos.y === 0) {
-                break;
-            }
-            pieceDrop();
-        }
         lineDropSound.play();
-        event.preventDefault();
+        pieceFastDrop();
     }
 
     // Pause game

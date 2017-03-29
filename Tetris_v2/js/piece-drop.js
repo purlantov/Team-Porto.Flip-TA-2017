@@ -103,15 +103,20 @@ function getNewPiece() {
 }
 
 function arenaSweep() {
+    let fullRows = 0;
     outer: for (let y = arena.length - 1; y > 0; y -= 1) {
         for (let x = 0; x < arena[y].length; x += 1) {
             if (arena[y][x] === 0) {
                 continue outer;
             }
         }
-        updateScore();
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         y += 1;
+        fullRows +=1;
+    }
+
+    if (fullRows > 0) {
+        updateScore(fullRows);
     }
 }

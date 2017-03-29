@@ -4,12 +4,14 @@ canvas.width = '420';
 canvas.height = '700';
 
 //context.scale(35, 35);
+const START_SPEED = 700;
 
 let lastTime = 0,
     dropCounter = 0,
-    dropInterval = 150,
     gamePaused = true,
-    gameOver = true;
+    gameOver = true,
+    dropInterval = START_SPEED;
+;
 
 function update(time = 0) {
     // Counts time interval, based on window refresh rate.
@@ -48,7 +50,7 @@ function startNewGame() {
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
-    dropInterval = 150;
+    dropInterval = START_SPEED;
 
     totalScore.className = '';
     totalScore.innerText = 0;

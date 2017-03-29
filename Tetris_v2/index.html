@@ -7,13 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
-
-    <audio src="sounds/song.mp3" loop="true" autoplay="true">Your browser does not support the <code>audio</code> element.</audio>
-
     <div id="wrap">
         <header>
             <img src="images/logo.jpg" alt="Tetris" />
@@ -66,16 +62,22 @@
                     <p>Telerik Academy Season 8 (2016-2017)</p>
                 </footer>
             </aside>
+        </div>
 
-            <script src="js/audio.js"></script>
-            <script src="js/blocks.js"></script>
-            <script src="js/draw.js"></script>
-            <script src="js/piece-drop.js"></script>
-            <script src="js/piece-move.js"></script>
-            <script src="js/scores.js"></script>
-            <script src="js/main.js"></script>
+        <div id="audio-elements">
+            <audio src="sounds/song.mp3" loop="true" autoplay="true">Your browser does not support the 
+                <code>audio</code> element.
+            </audio>
         </div>
     </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/blocks.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/piece-drop.js"></script>
+    <script src="js/piece-move.js"></script>
+    <script src="js/scores.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -121,13 +121,6 @@ document.addEventListener('keydown', event => {
     }
 });
 
-// Prevent SpaceBar to repeat last clicked event
-$(window).keyup(function(e) {
-    if (e.keyCode === 0 || e.keyCode === 32) {
-        e.preventDefault();
-    }
-});
-
 const gameControls = document.getElementById('game-controls');
 const btnNew = document.getElementById('newGame');
 const btnPause = document.getElementById('pause');
@@ -138,12 +131,16 @@ const audios = document.querySelectorAll('audio');
 
 gameControls.addEventListener('click', function(ev) {
     if (ev.target == btnNew) {
+        btnNew.blur();
         startNewGame();
     } else if (ev.target == btnPause) {
+        btnPause.blur();
         pauseGame();
     } else if (ev.target == btnHelp) {
+        btnHelp.blur();
         instructions.classList.toggle('active');
     } else if (ev.target == btnMute) {
+        btnMute.blur();
         [].forEach.call(audios, function(audio) { muteAll(audio); })
     }
 }, false);

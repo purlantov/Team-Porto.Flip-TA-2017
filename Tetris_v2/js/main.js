@@ -54,6 +54,7 @@ function startNewGame() {
 
     totalScore.className = '';
     totalScore.innerText = 0;
+    currentLevel.innerText = 1;
     getBestScore(currentPlayer.score);
 
     currentPlayer = new Player();

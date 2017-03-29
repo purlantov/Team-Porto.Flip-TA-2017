@@ -42,3 +42,29 @@ function pieceRotate(dir) {
         }
     }
 }
+
+function pieceDrop() {
+    piece.pos.y += 1;
+    if (collide(arena, piece)) {
+        piece.pos.y -= 1;
+        if (piece.pos.y < 0) {
+            gameOver = true;
+            return;
+        } else {
+            merge(arena, piece);
+
+            getNewPiece();
+            arenaSweep();
+        }
+    }
+}
+
+function pieceFastDrop(params) {
+    piece.pos.y += 1;
+    if (collide(arena, piece)) {
+        piece.pos.y -= 1;
+        pieceDrop();
+        return;
+    }
+    pieceFastDrop();
+}

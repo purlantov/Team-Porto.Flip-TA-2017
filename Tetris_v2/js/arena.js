@@ -16,15 +16,18 @@ function createArenaMatrix(width, height) {
 function collide(arena, piece) {
     for (let row = 0; row < piece.matrix.length; row += 1) {
         for (let col = 0; col < piece.matrix[row].length; col += 1) {
-            // Skip if the piece is still outside the matrix
-            if (row + piece.pos.y < 0) {
-                continue;
+            // Skip if the piece is still above the matrix
+            // Don't skip if the piece tries to move out of the matrix (left or right)
+            if (row + piece.pos.y < 0 &&
+                // Fixes move left out of the field
+                arena[col + piece.pos.x]) {
+                break;
             }
             // Disregard piece matrix zero values
-            if (piece.matrix[row][col] !== 0 &&
+            else if (piece.matrix[row][col] !== 0 &&
                 // Check if arena-row exists
                 (arena[row + piece.pos.y] &&
-                    // Check if arena col next to piece position on this row is filled
+                    // Check if arena cell corresponding to this piece's cell is filled
                     arena[row + piece.pos.y][col + piece.pos.x]) !== 0) {
                 // There is a collision
                 return true;

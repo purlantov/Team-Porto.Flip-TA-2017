@@ -29,6 +29,7 @@ function update(time = 0) {
         if (dropCounter > dropInterval) {
             pieceDrop();
             if (gameOver) {
+                audio.gameEnd.play();
                 draw.drawGameOverMessage();
                 getBestScore(currentPlayer.score);
                 return;

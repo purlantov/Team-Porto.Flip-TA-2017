@@ -1,26 +1,30 @@
-const moveSound = new Audio("./sounds/move.mp3"),
-    pauseSound = new Audio("./sounds/pause.mp3"),
-    startSound = new Audio("./sounds/start.mp3"),
-    gameOverSound = new Audio("./sounds/gameover.mp3"),
-    lineDropSound = new Audio("./sounds/line-drop.mp3"),
-    lineRemoveSound = new Audio("./sounds/line-remove.mp3");
+const audio = {
+    song: new Audio("./sounds/song.mp3"),
+    move: new Audio("./sounds/move.mp3"),
+    pause: new Audio("./sounds/pause.mp3"),
+    start: new Audio("./sounds/start.mp3"),
+    gameEnd: new Audio("./sounds/gameover.mp3"),
+    lineDrop: new Audio("./sounds/line-drop.mp3"),
+    lineRemove: new Audio("./sounds/line-remove.mp3")
+};
 
-// There should be a better way to do this?
+audio.song.loop = true;
+audio.song.autoplay = true;
+
 const audioBox = document.getElementById('audio-elements');
 
-audioBox.appendChild(moveSound);
-audioBox.appendChild(pauseSound);
-audioBox.appendChild(startSound);
-audioBox.appendChild(gameOverSound);
-audioBox.appendChild(lineDropSound);
-audioBox.appendChild(lineRemoveSound);
+for (let i in audio) {
+    audioBox.appendChild(audio[i]);
+}
 
-function muteAll(element) {
-    if (!element.muted) {
-        element.muted = true;
-        btnMute.innerHTML = '<img src="images/soundOff.svg">'
-    } else {
-        element.muted = false;
-        btnMute.innerHTML = '<img src="images/soundOn.svg">';
+function toggleSound() {
+    for (let i in audio) {
+        if (!audio[i].muted) {
+            audio[i].muted = true;
+            btnMute.innerHTML = '<img src="images/soundOff.svg">'
+        } else {
+            audio[i].muted = false;
+            btnMute.innerHTML = '<img src="images/soundOn.svg">';
+        }
     }
 }

@@ -42,7 +42,7 @@ function update(time = 0) {
 }
 
 function startNewGame() {
-    startSound.play();
+    audio.start.play();
     arena.forEach(row => row.fill(0));
     gamePaused = false;
     gameOver = false;
@@ -60,7 +60,7 @@ function startNewGame() {
 }
 
 function pauseGame() {
-    pauseSound.play();
+    audio.pause.play();
     if (gameOver) {
         return;
     }
@@ -78,31 +78,31 @@ document.addEventListener('keydown', event => {
     // Move left
     if (event.code === 'ArrowLeft') {
         pieceMove(-1);
-        moveSound.play();
+        audio.move.play();
     }
 
     // Move right
     else if (event.code === 'ArrowRight') {
         pieceMove(1);
-        moveSound.play();
+        audio.move.play();
     }
 
     // Rotate right
     else if (event.code === 'ArrowUp') {
         pieceRotate(1);
-        moveSound.play();
+        audio.move.play();
     }
 
     // Move down faster
     else if (event.code === 'ArrowDown') {
         pieceDrop();
-        moveSound.play();
+        audio.move.play();
     }
 
     //Fast drop
     else if (event.code === 'Space' && !gamePaused) {
         pieceFastDrop();
-        lineDropSound.play();
+        audio.lineDrop.play();
     }
 
     // Pause game
@@ -122,7 +122,6 @@ const btnPause = document.getElementById('pause');
 const btnHelp = document.getElementById('help');
 const instructions = document.getElementById('instructions');
 const btnMute = document.getElementById('mute');
-const audios = document.querySelectorAll('audio');
 
 gameControls.addEventListener('click', function(ev) {
     if (ev.target == btnNew) {
@@ -136,7 +135,7 @@ gameControls.addEventListener('click', function(ev) {
         instructions.classList.toggle('active');
     } else if (ev.target == btnMute || ev.target.parentElement === btnMute) {
         btnMute.blur();
-        [].forEach.call(audios, function(audio) { muteAll(audio); })
+        toggleSound();
     }
 }, false);
 

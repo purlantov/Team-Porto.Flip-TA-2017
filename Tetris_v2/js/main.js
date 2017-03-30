@@ -13,16 +13,9 @@ let lastTime = 0,
 
 function update(time = 0) {
     // Counts time interval, based on window refresh rate.
-    // Increases dropCounter with diff between current time and last time refresh was called
-    // deltaTime is usually around 16ms
-    // the piece moves down when dropInterval exceeded
     const deltaTime = time - lastTime;
     lastTime = time;
     dropCounter += deltaTime;
-
-    // TO TEAM: Verify
-    // Increase dropCounter by a fixed amount of 16 every tick/window refresh
-    // Remove code above and use this?
     // dropCounter += 16;
 
     if (!gamePaused) {
